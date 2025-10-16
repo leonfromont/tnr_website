@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True North Ritual - Premium Beauty & Skin Treatments</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Baskervville -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-franklin">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 bg-white shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/TNR_logo.svg" alt="True North Ritual Logo" class="h-12">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="treatments.html" class="nav-link">Treatments</a>
+                    <a href="book.html" class="nav-link nav-link-cta">Book Now</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 nav-link active">Home</a>
+                <a href="about.html" class="block py-2 nav-link">About</a>
+                <a href="treatments.html" class="block py-2 nav-link">Treatments</a>
+                <a href="book.html" class="block py-2 nav-link nav-link-cta">Book Now</a>
+                <a href="contact.html" class="block py-2 nav-link">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-image">
+            <img src="images/hero-home.jpg" alt="True North Ritual" class="w-full h-full object-cover">
+        </div>
+        <div class="hero-overlay">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="font-baskervville text-5xl md:text-7xl mb-6 text-white">True North Ritual</h1>
+                <p class="text-xl md:text-2xl mb-8 text-white max-w-2xl mx-auto">Discover your skin's true potential with our premium beauty treatments</p>
+                <a href="https://www.timely.com/truenorthritual" target="_blank" class="btn-primary">Book Your Appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Snippet -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-baskervville text-4xl md:text-5xl mb-6">Welcome to True North Ritual</h2>
+                    <p class="text-lg text-gray-700 mb-4">
+                        At True North Ritual, we believe that beautiful skin is a journey, not a destination. Our expert treatments are designed to rejuvenate, restore, and reveal your natural radiance.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Experience personalized care in our tranquil studio, where every treatment is tailored to your unique skin needs.
+                    </p>
+                    <a href="about.html" class="btn-secondary">Learn More About Us</a>
+                </div>
+                <div class="h-96 bg-gray-200 rounded-lg overflow-hidden">
+                    <img src="images/about-snippet.jpg" alt="True North Ritual Studio" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Treatments -->
+    <section class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-baskervville text-4xl md:text-5xl mb-4">Our Treatments</h2>
+                <p class="text-lg text-gray-700">Discover our range of premium skin treatments</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Treatment Card 1 -->
+                <div class="treatment-card">
+                    <div class="h-64 bg-gray-200 rounded-lg overflow-hidden mb-6">
+                        <img src="images/treatment-skin-needling.jpg" alt="Skin Needling" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-baskervville text-2xl mb-3">Skin Needling</h3>
+                    <p class="text-gray-700 mb-4">Stimulate collagen production and reveal smoother, more youthful skin.</p>
+                    <p class="text-xl font-semibold mb-4">$10</p>
+                    <a href="treatments.html" class="btn-secondary">Learn More</a>
+                </div>
+
+                <!-- Treatment Card 2 -->
+                <div class="treatment-card">
+                    <div class="h-64 bg-gray-200 rounded-lg overflow-hidden mb-6">
+                        <img src="images/treatment-baldness.jpg" alt="Baldness Treatment" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-baskervville text-2xl mb-3">Baldness Treatment</h3>
+                    <p class="text-gray-700 mb-4">Advanced solutions to promote hair growth and scalp health.</p>
+                    <p class="text-xl font-semibold mb-4">$10</p>
+                    <a href="treatments.html" class="btn-secondary">Learn More</a>
+                </div>
+
+                <!-- Treatment Card 3 -->
+                <div class="treatment-card">
+                    <div class="h-64 bg-gray-200 rounded-lg overflow-hidden mb-6">
+                        <img src="images/treatment-facial.jpg" alt="Facial" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-baskervville text-2xl mb-3">Facial</h3>
+                    <p class="text-gray-700 mb-4">Luxurious facial treatments tailored to your skin's unique needs.</p>
+                    <p class="text-xl font-semibold mb-4">$10</p>
+                    <a href="treatments.html" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gray-900 text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="font-baskervville text-4xl md:text-5xl mb-6">Ready to Transform Your Skin?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Book your appointment today and begin your journey to radiant, healthy skin.</p>
+            <a href="https://www.timely.com/truenorthritual" target="_blank" class="btn-primary">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Opening Hours -->
+                <div>
+                    <h3 class="font-baskervville text-xl mb-4">Opening Hours</h3>
+                    <p class="text-gray-700">Monday: 9am - 5pm</p>
+                    <p class="text-gray-700 text-sm mt-2">By appointment only</p>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-baskervville text-xl mb-4">Contact</h3>
+                    <p class="text-gray-700 mb-2">Second Floor 418 Princes Street</p>
+                    <p class="text-gray-700 mb-2">
+                        <a href="tel:0272574738" class="hover:text-gray-900">027 257 4738</a>
+                    </p>
+                    <p class="text-gray-700">
+                        <a href="mailto:admin@truenorthritual.com" class="hover:text-gray-900">admin@truenorthritual.com</a>
+                    </p>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="font-baskervville text-xl mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/truenorthritual" target="_blank" class="social-icon" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/truenorthritual" target="_blank" class="social-icon" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t text-center text-gray-600">
+                <p>&copy; 2025 True North Ritual. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
