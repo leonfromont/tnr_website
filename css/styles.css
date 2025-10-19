@@ -7,6 +7,7 @@
     --text-primary: #1a1a1a;
     --text-secondary: #666666;
     --border-color: #e5e5e5;
+    --gold-bg: #8B7355;
 }
 
 /* Base Styles */
@@ -184,6 +185,11 @@ header {
     border-color: var(--accent-color);
     color: white;
     transform: translateY(-2px);
+}
+
+/* Gold Background */
+.bg-gold {
+    background-color: var(--gold-bg);
 }
 
 /* Smooth Scrolling */
