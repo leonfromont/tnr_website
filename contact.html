@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - True North Ritual</title>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHTGPT535J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NHTGPT535J');
+    </script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -76,7 +85,11 @@
                         Have a question or want to learn more about our treatments? Fill out the form below and we'll get back to you as soon as possible.
                     </p>
 
-                    <form id="contactForm" class="space-y-6">
+                    <form id="contactForm" class="space-y-6"  action="https://formspree.io/f/mrbydewa" method="POST">
+                        <!-- Hidden field for redirect after submission -->
+                        <input type="hidden" name="_next" value="https://truenorthritual.com/contact.html">
+                        <input type="hidden" name="_subject" value="New contact form submission from True North Ritual">
+
                         <div>
                             <label for="name" class="block text-sm font-semibold mb-2">Name *</label>
                             <input
