@@ -12,28 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Contact Form Handler
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Get form values
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-
-            // Here you would typically send the form data to a server
-            // For now, we'll just show an alert
-            alert('Thank you for your message! We will get back to you as soon as possible.\n\nNote: This form is not yet connected to a backend. Please contact us directly at admin@truenorthritual.com or call 027 257 4738.');
-
-            // Reset form
-            contactForm.reset();
-        });
-    }
+    // Form submits directly to Formspree - no custom handler needed
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
