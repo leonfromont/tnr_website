@@ -44,4 +44,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Treatment Toggle Handler
+    const treatmentToggles = document.querySelectorAll('.treatment-toggle');
+    treatmentToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const content = document.getElementById(targetId);
+            const icon = this.querySelector('.toggle-icon');
+
+            if (content && icon) {
+                content.classList.toggle('hidden');
+
+                // Rotate icon and change between + and -
+                if (content.classList.contains('hidden')) {
+                    icon.textContent = '+';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.textContent = '−';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            }
+        });
+    });
 });
