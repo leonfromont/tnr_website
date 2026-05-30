@@ -45,6 +45,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // GA4 conversion event tracking via delegation
+    if (typeof gtag === 'function') {
+        const linkLocation = (el) => {
+            if (el.closest('header, nav')) return 'header';
+            if (el.closest('footer')) return 'footer';
+            return 'body';
+        };
+
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href]');
+            if (!link) return;
+            const href = link.getAttribute('href') || '';
+            const location = linkLocation(link);
+            const text = (link.textContent || '').trim().slice(0, 60);
+
+            if (href.startsWith('tel:')) {
+                gtag('event', 'phone_click', {link_location: location, link_text: text});
+            } else if (href.startsWith('mailto:')) {
+                gtag('event', 'email_click', {link_location: location, link_text: text});
+            } else if (/(^|\/)book\.html(?:$|[?#])/.test(href)) {
+                if (window.location.pathname.endsWith('/book.html')) return;
+                gtag('event', 'book_click', {link_location: location, link_text: text});
+            }
+        });
+
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function() {
+                gtag('event', 'form_submit', {form_id: 'contactForm'});
+            });
+        }
+
+        if (window.location.pathname.endsWith('/book.html')) {
+            gtag('event', 'view_booking_page');
+        }
+    }
+
     // Treatment Toggle Handler
     const treatmentToggles = document.querySelectorAll('.treatment-toggle');
     treatmentToggles.forEach(toggle => {
