@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A private evening at True North Ritual — our invitation-only Face Mask Party. A guided multi-mask facial, a skincare ritual, bubbles, treats and event-night offers. Reserve your spot.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://truenorthritual.com/face-mask-party.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://truenorthritual.com/face-mask-party.html">
+    <meta property="og:title" content="You're Invited — The Face Mask Party | True North Ritual">
+    <meta property="og:description" content="An intimate evening of masks, ritual and bubbles at our Dunedin studio. By invitation only — limited spots. Reserve your place.">
+    <meta property="og:image" content="https://truenorthritual.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://truenorthritual.com/face-mask-party.html">
+    <meta property="twitter:title" content="You're Invited — The Face Mask Party | True North Ritual">
+    <meta property="twitter:description" content="An intimate evening of masks, ritual and bubbles at our Dunedin studio. By invitation only — limited spots. Reserve your place.">
+    <meta property="twitter:image" content="https://truenorthritual.com/images/og-image.jpg">
+
+    <title>You're Invited — The Face Mask Party | True North Ritual</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHTGPT535J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NHTGPT535J');
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Baskervville & Libre Franklin -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Custom CSS (shared design system) -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- ====================================================================
+         Page-specific styles: "An Evening of Masks & Ritual"
+         An editorial invitation (Concept 3 typographic backbone + native
+         gold reserve band) warmed with the wax-seal monogram, disciplined
+         foil and stationery ornaments (Concept 1), on a STATIC gold-mesh
+         ground. Capped hero type + opaque cream text fix the mobile-overflow
+         and WCAG failures the judges flagged. All styles are scoped to
+         body.invite so nothing leaks into the rest of the site.
+         ==================================================================== -->
+    <style>
+        :root {
+            --cream:       #F7F2E9;
+            --cream-deep:  #F0E8D9;
+            --sand:        #E7DCC7;
+            --gold:        #8B7355;
+            --gold-soft:   #A88E6B;
+            --gold-deep:   #6E5A40;
+            --ink:         #1a1a1a;
+            --ink-soft:    #4a4239;
+            --cream-text:  #FBF7EF; /* opaque cream — used ONLY on gold/ink grounds */
+        }
+
+        body.invite {
+            background-color: var(--cream);
+            color: var(--ink);
+            overflow-x: hidden; /* defensive: protect against any wide display word */
+        }
+
+        /* ---------- Atmospheric layered ground: STATIC soft gold mesh + faint paper grain ---------- */
+        .ground {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-color: var(--cream);
+            background-image:
+                radial-gradient(58% 48% at 50% -8%, rgba(139,115,85,0.15) 0%, rgba(139,115,85,0) 60%),
+                radial-gradient(45% 40% at 8% 22%, rgba(168,142,107,0.11) 0%, rgba(168,142,107,0) 55%),
+                radial-gradient(52% 46% at 92% 86%, rgba(110,90,64,0.11) 0%, rgba(110,90,64,0) 58%);
+        }
+        .ground::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.5;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply;
+        }
+
+        /* ---------- Editorial type system ---------- */
+        .display {
+            font-family: 'Baskervville', serif;
+            line-height: 0.96;
+            letter-spacing: -0.01em;
+        }
+        .lead { font-family: 'Baskervville', serif; font-style: italic; }
+
+        /* Foil gold for at most TWO display phrases. Solid color set FIRST so the
+           text can never render invisibly where background-clip:text is unsupported.
+           The gradient ramp is capped within the gold family — its lightest stop is
+           #9A7E55 (~3.6:1 on the cream ground, ample for a large display word) and the
+           dark ends are #6E5A40 (5.89:1) — so the visible center of "Mask" stays
+           legible on cream while keeping the metallic shimmer. */
+        .foil {
+            color: var(--gold-deep);
+            background: linear-gradient(100deg, #6E5A40 0%, #8B7355 30%, #9A7E55 50%, #8B7355 68%, #6E5A40 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+            .foil { color: transparent; -webkit-text-fill-color: transparent; }
+        }
+
+        /* Small-caps editorial labels with a graded tracking scale.
+           Smallest sizes are bumped to >=0.7rem and tracking eased at the
+           narrowest widths so labels stay readable / un-crowded at 360px. */
+        .label {
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--gold-deep);
+        }
+        @media (min-width: 768px) { .label { font-size: 0.74rem; letter-spacing: 0.36em; } }
+        .label-cream { color: var(--cream-text); }
+        .eyebrow {
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--gold-deep);
+        }
+        @media (min-width: 480px) { .eyebrow { letter-spacing: 0.42em; font-size: 0.7rem; } }
+
+        /* Hairline rules — crisp gold */
+        .rule { height: 1px; background: var(--gold); border: 0; }
+        .rule-soft { background: rgba(139,115,85,0.28); }
+
+        /* Oversized editorial numerals (decorative; meaning carried by the h3) */
+        .numeral {
+            font-family: 'Baskervville', serif;
+            font-style: italic;
+            line-height: 0.8;
+            color: var(--gold);
+            font-size: clamp(3rem, 9vw, 6rem);
+        }
+        .numeral-sm {
+            font-family: 'Baskervville', serif;
+            font-style: italic;
+            color: var(--gold-soft);
+            font-size: clamp(2.4rem, 6vw, 3.4rem);
+            line-height: 0.8;
+        }
+
+        /* Header wordmark */
+        .wordmark {
+            font-family: 'Baskervville', serif;
+            letter-spacing: 0.06em;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        /* ---------- Wax-seal TNR monogram (echoes the favicon's gold compass) ---------- */
+        .seal {
+            width: 92px;
+            height: 92px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            position: relative;
+            background: radial-gradient(circle at 34% 30%, #A88E6B 0%, #8B7355 38%, #6E5A40 78%, #5b4a35 100%);
+            box-shadow:
+                0 10px 22px -8px rgba(110,90,64,0.6),
+                0 2px 6px rgba(0,0,0,0.2),
+                inset 0 2px 4px rgba(255,255,255,0.35),
+                inset 0 -6px 12px rgba(0,0,0,0.28);
+            color: var(--cream-text);
+        }
+        .seal::before {
+            content: "";
+            position: absolute;
+            inset: 9px;
+            border-radius: 50%;
+            border: 1px dashed rgba(244,236,220,0.45);
+        }
+        .seal .monogram {
+            font-family: 'Baskervville', serif;
+            font-size: 1.85rem;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.35);
+        }
+        /* Light seal variant for the gold reserve band */
+        .seal-light {
+            background: rgba(247,242,233,0.10);
+            box-shadow:
+                inset 0 2px 4px rgba(255,255,255,0.25),
+                inset 0 -6px 12px rgba(0,0,0,0.18);
+        }
+        .seal-light::before { border-color: rgba(247,242,233,0.55); }
+
+        /* ---------- Diamond + flourish ornament divider ---------- */
+        .ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.9rem;
+            color: var(--gold);
+        }
+        .ornament .line { height: 1px; width: 56px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+        .ornament .line.r { background: linear-gradient(90deg, var(--gold-soft), transparent); }
+        .ornament .diamond {
+            width: 7px; height: 7px;
+            transform: rotate(45deg);
+            background: var(--gold);
+            box-shadow: 0 0 0 4px rgba(139,115,85,0.16);
+        }
+
+        /* ---------- Invitation card — soft pressed-paper panel ---------- */
+        .card {
+            background: linear-gradient(180deg, #FBF7EF 0%, #F6EFE2 100%);
+            border: 1px solid rgba(139,115,85,0.28);
+            box-shadow:
+                0 1px 0 rgba(255,255,255,0.7) inset,
+                0 30px 60px -30px rgba(110,90,64,0.35),
+                0 8px 24px -16px rgba(110,90,64,0.25);
+        }
+
+        /* Invite badge pill — tasteful scarcity with a gentle pulse */
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            border: 1px solid rgba(139,115,85,0.45);
+            border-radius: 999px;
+            padding: 0.5rem 1.15rem;
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gold-deep);
+            background: rgba(255,255,255,0.4);
+        }
+        @media (min-width: 480px) { .pill { letter-spacing: 0.24em; font-size: 0.66rem; } }
+        .pill .dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 0 0 rgba(139,115,85,0.45);
+            animation: pulse 2.8s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%   { box-shadow: 0 0 0 0 rgba(139,115,85,0.45); }
+            70%  { box-shadow: 0 0 0 7px rgba(139,115,85,0); }
+            100% { box-shadow: 0 0 0 0 rgba(139,115,85,0); }
+        }
+
+        /* Inclusions: gallery rows with hover lift */
+        .inclusion {
+            border-top: 1px solid rgba(139,115,85,0.25);
+            transition: background .4s ease;
+        }
+        .inclusion:hover { background: rgba(255,255,255,0.4); }
+        .inclusion:hover .incl-num { color: var(--gold-deep); transform: translateX(4px); }
+        .incl-num { transition: color .4s ease, transform .4s ease; }
+
+        /* Agenda timeline rows */
+        .agenda-row { border-top: 1px solid rgba(139,115,85,0.25); }
+        .agenda-row:last-child { border-bottom: 1px solid rgba(139,115,85,0.25); }
+
+        /* Detail definition rows */
+        .detail-row {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            align-items: baseline;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(139,115,85,0.2);
+        }
+        .detail-row:last-child { border-bottom: 0; }
+        .detail-label {
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.28em;
+            font-size: 0.66rem;
+            font-weight: 600;
+            color: var(--gold-deep);
+            white-space: nowrap;
+        }
+
+        /* ---------- Stripe placeholder checkout button (light-on-deep-gold within reserve band) ---------- */
+        #stripe-checkout {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            width: 100%;
+            max-width: 24rem;
+            background: var(--cream-text);
+            color: var(--ink);
+            font-family: 'Libre Franklin', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            padding: 1.15rem 2.5rem;
+            border-radius: 0.375rem;
+            border: 1px solid var(--cream-text);
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 18px 40px -16px rgba(0,0,0,0.45);
+            transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+        }
+        #stripe-checkout:hover {
+            transform: translateY(-3px);
+            background: #fff;
+            box-shadow: 0 26px 50px -18px rgba(0,0,0,0.5);
+        }
+        /* Disabled placeholder state: still clearly readable, but visually inert */
+        #stripe-checkout:disabled {
+            cursor: default;
+            opacity: 0.92;
+        }
+        #stripe-checkout:disabled:hover {
+            transform: none;
+            background: var(--cream-text);
+            box-shadow: 0 18px 40px -16px rgba(0,0,0,0.45);
+        }
+        #stripe-checkout .arrow { transition: transform .3s ease; }
+        #stripe-checkout:not(:disabled):hover .arrow { transform: translateX(5px); }
+
+        /* FAQ — custom +/- icon built from pseudo-elements (no JS) */
+        details.faq { border-top: 1px solid rgba(139,115,85,0.25); }
+        details.faq:last-of-type { border-bottom: 1px solid rgba(139,115,85,0.25); }
+        details.faq summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.4rem 0;
+            font-family: 'Baskervville', serif;
+            font-size: 1.25rem;
+            color: var(--ink);
+            transition: color .25s ease;
+        }
+        details.faq summary:hover { color: var(--gold-deep); }
+        details.faq summary::-webkit-details-marker { display: none; }
+        details.faq summary .plus {
+            flex: none;
+            position: relative;
+            width: 22px; height: 22px;
+            transition: transform .35s ease;
+        }
+        details.faq summary .plus::before,
+        details.faq summary .plus::after {
+            content: ""; position: absolute; background: var(--gold);
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+        }
+        details.faq summary .plus::before { width: 14px; height: 1.5px; }
+        details.faq summary .plus::after  { width: 1.5px; height: 14px; transition: transform .35s ease; }
+        details.faq[open] summary .plus::after { transform: translate(-50%, -50%) scaleY(0); }
+        details.faq .answer {
+            padding: 0 0 1.4rem;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            max-width: 60ch;
+        }
+
+        /* Placeholder token styling */
+        .token {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--gold-deep);
+            background: rgba(139,115,85,0.10);
+            padding: 0 0.28em;
+            border-radius: 3px;
+        }
+        .token-cream {
+            color: var(--cream-text);
+            background: rgba(255,255,255,0.18);
+            padding: 0 0.1em;
+            border-radius: 3px;
+        }
+
+        /* Price block: sized with clamp + wrapping so the amount scales/wraps and
+           never overflows the column at ~360px. */
+        .price-amount {
+            font-size: clamp(3rem, 16vw, 6rem);
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+        .price-currency { font-size: clamp(1.5rem, 6vw, 2.5rem); }
+
+        /* Screen-reader-only utility */
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+
+        /* ---------- Choreographed pure-CSS page-load reveal (no JS gating of any content) ---------- */
+        @keyframes riseIn {
+            0%   { opacity: 0; transform: translateY(22px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes drawRule {
+            0%   { transform: scaleX(0); }
+            100% { transform: scaleX(1); }
+        }
+        @keyframes sealIn {
+            0%   { opacity: 0; transform: scale(0.6) rotate(-12deg); }
+            60%  { opacity: 1; transform: scale(1.06) rotate(3deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0); }
+        }
+
+        .reveal      { opacity: 0; animation: riseIn .9s cubic-bezier(.2,.7,.2,1) forwards; }
+        .reveal-rule { transform: scaleX(0); transform-origin: center; animation: drawRule 1s cubic-bezier(.2,.7,.2,1) forwards; }
+        .reveal-seal { opacity: 0; animation: sealIn 1.1s cubic-bezier(.2,.8,.2,1) forwards; }
+
+        .d-0 { animation-delay: 0.05s; }
+        .d-1 { animation-delay: 0.20s; }
+        .d-2 { animation-delay: 0.35s; }
+        .d-3 { animation-delay: 0.50s; }
+        .d-4 { animation-delay: 0.65s; }
+        .d-5 { animation-delay: 0.80s; }
+        .d-6 { animation-delay: 0.95s; }
+        .d-7 { animation-delay: 1.10s; }
+
+        /* Thorough reduced-motion fallback: disables every load animation, the
+           badge pulse and the grain layer, and overrides the shared smooth scroll. */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .reveal-rule, .reveal-seal, .pill .dot {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .ground::after { display: none; }
+            #stripe-checkout:hover { transform: none; }
+            html { scroll-behavior: auto; }
+        }
+
+        /* Accessible focus states — visible gold ring */
+        a:focus-visible,
+        summary:focus-visible,
+        #stripe-checkout:focus-visible {
+            outline: 2px solid var(--gold-deep);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+        /* On the gold band, the focus ring switches to cream for contrast */
+        .on-gold a:focus-visible,
+        .on-gold #stripe-checkout:focus-visible {
+            outline-color: var(--cream-text);
+        }
+
+        /* Deterministic hero cap independent of cascade order (does NOT rely on the
+           shared .font-baskervville 0.9em mobile rule winning vs. Tailwind source
+           order). Fits within 320–360px without depending on overflow-x:hidden. */
+        .hero-title {
+            font-size: clamp(2.5rem, 11vw, 6rem);
+            line-height: 0.94;
+            letter-spacing: -0.01em;
+        }
+
+        /* Reserve band: deeper gold so white (#fff ~7.4:1) and cream text
+           (#FBF7EF ~6.9:1) clear WCAG AA at normal size on this section. */
+        #reserve { background-color: var(--gold-deep); }
+    </style>
+</head>
+<body class="invite font-franklin">
+
+    <!-- Static atmospheric background -->
+    <div class="ground" aria-hidden="true"></div>
+
+    <!-- ============ MINIMAL HEADER (centered wordmark only — no nav, no hamburger) ============ -->
+    <header class="w-full">
+        <div class="container mx-auto px-6 py-6 flex justify-center">
+            <a href="index.html" class="wordmark text-lg md:text-xl reveal d-0" aria-label="True North Ritual home">True North Ritual</a>
+        </div>
+        <div class="container mx-auto px-6">
+            <hr class="rule-soft reveal-rule d-0" style="height:1px;border:0;" aria-hidden="true">
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ============ INVITATION HERO ============ -->
+        <section class="container mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-24" aria-labelledby="event-title">
+
+            <!-- Top meta line: invitation status + place -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-10 md:mb-14">
+                <p class="label reveal d-0">By Invitation Only</p>
+                <p class="label reveal d-0">Dunedin &middot; Aotearoa</p>
+            </div>
+
+            <div class="text-center">
+                <p class="eyebrow reveal d-1 mb-4">You are cordially invited</p>
+
+                <!-- Elegant evening name as kicker -->
+                <p class="lead text-xl md:text-2xl reveal d-1 mb-5" style="color: var(--gold-deep);">An Evening of Masks &amp; Ritual</p>
+
+                <!-- Oversized editorial headline — capped via .hero-title clamp() so it
+                     never clips on a phone, independent of cascade order.
+                     Foil reserved for the single accent word "Mask". -->
+                <h1 id="event-title" class="font-baskervville hero-title reveal d-2 mb-7">
+                    The Face<br><span class="foil">Mask</span> Party
+                </h1>
+
+                <!-- Animated crisp gold rule -->
+                <div class="flex justify-center">
+                    <hr class="rule reveal-rule d-3 mb-9 w-24" style="height:2px;border:0;" aria-hidden="true">
+                </div>
+
+                <!-- Hook -->
+                <p class="reveal d-3 text-lg md:text-xl mx-auto max-w-xl mb-8 leading-relaxed" style="color: var(--ink-soft);">
+                    A candlelit hour in our studio — layered masks, a guided skincare ritual, and a glass of
+                    something lovely. Just for you and a small circle of guests.
+                </p>
+
+                <!-- Key logistics line: date / time / full studio address -->
+                <div class="reveal d-4 space-y-1.5 mb-8">
+                    <p class="font-baskervville text-xl md:text-2xl">Saturday 11 July</p>
+                    <p class="text-sm md:text-base tracking-wide" style="color: var(--ink-soft);">
+                        8.00pm&nbsp;&ndash;&nbsp;10.00pm
+                    </p>
+                    <p class="text-sm md:text-base" style="color: var(--ink-soft);">
+                        True North Ritual &middot; L2/418 Princes Street, Central Dunedin
+                    </p>
+                </div>
+
+                <!-- Scarcity badges: capacity + spots-left mirror the spec's "limited to [X] guests" framing -->
+                <div class="reveal d-5 flex flex-wrap items-center justify-center gap-3 mb-9">
+                    <span class="pill"><span class="dot" aria-hidden="true"></span>By Invitation Only</span>
+                    <span class="pill"><span class="dot" aria-hidden="true"></span>An Intimate Evening</span>
+                </div>
+
+                <!-- Primary CTA anchor — native brand btn-primary -->
+                <div class="reveal d-6">
+                    <a href="#reserve" class="btn-primary">Reserve Your Spot</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ WHAT TO EXPECT / INCLUSIONS ============ -->
+        <section class="container mx-auto px-6 py-14 md:py-24" aria-labelledby="expect-title">
+
+            <!-- Asymmetric editorial intro split: heading vs lede -->
+            <div class="grid md:grid-cols-12 gap-6 md:gap-12 items-end mb-12 md:mb-16">
+                <div class="md:col-span-7">
+                    <p class="label reveal d-0 mb-5">The Evening</p>
+                    <h2 id="expect-title" class="display text-4xl md:text-6xl reveal d-0">What to<br>expect</h2>
+                </div>
+                <div class="md:col-span-5 reveal d-0 md:pb-2">
+                    <p class="text-lg leading-relaxed" style="color: var(--ink-soft);">
+                        A facial reimagined as a gathering. An unhurried ritual, thoughtfully laid out from the
+                        moment you arrive to the little goodie bag you carry home.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Inclusions as gallery rows with oversized numerals (decorative, aria-hidden) -->
+            <div>
+                <article class="inclusion reveal d-0 py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8 md:items-start">
+                    <div class="md:col-span-2"><span class="numeral incl-num inline-block" aria-hidden="true">01</span></div>
+                    <h3 class="md:col-span-4 font-baskervville text-2xl md:text-3xl">A guided multi-mask facial</h3>
+                    <p class="md:col-span-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Cleanse, exfoliate and layer a sequence of masks chosen for your skin — walked through step by step by our therapists.
+                    </p>
+                </article>
+
+                <article class="inclusion reveal d-1 py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8 md:items-start">
+                    <div class="md:col-span-2"><span class="numeral incl-num inline-block" aria-hidden="true">02</span></div>
+                    <h3 class="md:col-span-4 font-baskervville text-2xl md:text-3xl">A skincare ritual demo</h3>
+                    <p class="md:col-span-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Learn the order, the why and the how of an at-home routine that actually sticks — with techniques you can take with you.
+                    </p>
+                </article>
+
+                <article class="inclusion reveal d-2 py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8 md:items-start">
+                    <div class="md:col-span-2"><span class="numeral incl-num inline-block" aria-hidden="true">03</span></div>
+                    <h3 class="md:col-span-4 font-baskervville text-2xl md:text-3xl">Bubbles &amp; treats</h3>
+                    <p class="md:col-span-6 leading-relaxed" style="color: var(--ink-soft);">
+                        A glass of bubbles (or a lovely non-alcoholic pour) and a few little bites to enjoy while your masks do their work.
+                    </p>
+                </article>
+
+                <article class="inclusion reveal d-3 py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8 md:items-start">
+                    <div class="md:col-span-2"><span class="numeral incl-num inline-block" aria-hidden="true">04</span></div>
+                    <h3 class="md:col-span-4 font-baskervville text-2xl md:text-3xl">A little goodie bag</h3>
+                    <p class="md:col-span-6 leading-relaxed" style="color: var(--ink-soft);">
+                        A curated takeaway of skincare to continue the ritual at home.
+                    </p>
+                </article>
+
+                <article class="inclusion reveal d-4 py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8 md:items-start">
+                    <div class="md:col-span-2"><span class="numeral incl-num inline-block" aria-hidden="true">05</span></div>
+                    <h3 class="md:col-span-4 font-baskervville text-2xl md:text-3xl">Event-night offers</h3>
+                    <p class="md:col-span-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Exclusive pricing on retail and treatments, available only on the night — first chance for our invited guests.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ AT A GLANCE + ORDER OF THE EVENING ============ -->
+        <section class="container mx-auto px-6 py-12 md:py-20" aria-labelledby="details-title">
+
+            <div class="text-center mb-12 md:mb-16">
+                <div class="ornament reveal d-0 mb-6" aria-hidden="true">
+                    <span class="line"></span><span class="diamond"></span><span class="line r"></span>
+                </div>
+                <p class="label reveal d-0 mb-4">The Particulars</p>
+                <h2 id="details-title" class="display text-4xl md:text-6xl reveal d-0">At a glance</h2>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+
+                <!-- Left: at-a-glance details card -->
+                <div class="md:col-span-5">
+                    <div class="card rounded-sm px-7 py-9 md:px-10 md:py-10 reveal d-1">
+                        <dl>
+                            <div class="detail-row">
+                                <dt class="detail-label">Date</dt>
+                                <dd class="text-right font-baskervville text-lg">Saturday 11 July</dd>
+                            </div>
+                            <div class="detail-row">
+                                <dt class="detail-label">Time</dt>
+                                <dd class="text-right font-baskervville text-lg">8.00pm &ndash; 10.00pm</dd>
+                            </div>
+                            <div class="detail-row">
+                                <dt class="detail-label">Location</dt>
+                                <dd class="text-right" style="color: var(--ink-soft);">L2/418 Princes Street,<br>Central Dunedin, Dunedin 9016</dd>
+                            </div>
+                            <div class="detail-row">
+                                <dt class="detail-label">Dress</dt>
+                                <dd class="text-right" style="color: var(--ink-soft);">Comfortable &amp; lovely — you&rsquo;ll be unwinding</dd>
+                            </div>
+                            <div class="detail-row">
+                                <dt class="detail-label">To Bring</dt>
+                                <dd class="text-right" style="color: var(--ink-soft);">Just yourself; a bare, freshly cleansed face if you can</dd>
+                            </div>
+                            <div class="detail-row">
+                                <dt class="detail-label">Guests</dt>
+                                <dd class="text-right" style="color: var(--ink-soft);">An intimate evening &mdash; limited places</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- Right: editorial agenda timeline (semantic ordered list, Roman numerals) -->
+                <div class="md:col-span-6 md:col-start-7">
+                    <p class="label reveal d-1 mb-8">The Order of the Evening</p>
+
+                    <ol class="reveal d-2">
+                        <li class="agenda-row py-6 grid grid-cols-[2.5rem_1fr] md:grid-cols-[4rem_1fr] gap-5 md:gap-7 items-baseline">
+                            <span class="numeral-sm" aria-hidden="true">I</span>
+                            <div>
+                                <h3 class="font-baskervville text-2xl md:text-3xl">Arrival &amp; bubbles</h3>
+                                <p class="mt-1" style="color: var(--ink-soft);">Settle in, say hello, and a glass to begin.</p>
+                            </div>
+                        </li>
+                        <li class="agenda-row py-6 grid grid-cols-[2.5rem_1fr] md:grid-cols-[4rem_1fr] gap-5 md:gap-7 items-baseline">
+                            <span class="numeral-sm" aria-hidden="true">II</span>
+                            <div>
+                                <h3 class="font-baskervville text-2xl md:text-3xl">The masking ritual</h3>
+                                <p class="mt-1" style="color: var(--ink-soft);">Our guided multi-mask experience, layer by layer.</p>
+                            </div>
+                        </li>
+                        <li class="agenda-row py-6 grid grid-cols-[2.5rem_1fr] md:grid-cols-[4rem_1fr] gap-5 md:gap-7 items-baseline">
+                            <span class="numeral-sm" aria-hidden="true">III</span>
+                            <div>
+                                <h3 class="font-baskervville text-2xl md:text-3xl">Skincare demo &amp; Q&amp;A</h3>
+                                <p class="mt-1" style="color: var(--ink-soft);">Technique, order and tips you can take home.</p>
+                            </div>
+                        </li>
+                        <li class="agenda-row py-6 grid grid-cols-[2.5rem_1fr] md:grid-cols-[4rem_1fr] gap-5 md:gap-7 items-baseline">
+                            <span class="numeral-sm" aria-hidden="true">IV</span>
+                            <div>
+                                <h3 class="font-baskervville text-2xl md:text-3xl">Offers &amp; goodie bags</h3>
+                                <p class="mt-1" style="color: var(--ink-soft);">Event-night pricing, take-home treats, and farewells.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ RESERVE / TICKET (deep-gold band; white/cream text clears WCAG AA) ============ -->
+        <section id="reserve" class="on-gold text-white scroll-mt-24" aria-labelledby="reserve-title">
+            <div class="container mx-auto px-6 py-20 md:py-28">
+                <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+
+                    <!-- Left: invitation statement -->
+                    <div class="md:col-span-7">
+                        <p class="label label-cream reveal d-0 mb-5">Your Invitation &middot; Single Ticket</p>
+                        <h2 id="reserve-title" class="display text-4xl md:text-6xl reveal d-1 mb-7">Reserve<br>your spot</h2>
+                        <p class="reveal d-2 max-w-md text-lg leading-relaxed" style="color: var(--cream-text);">
+                            One ticket secures your place for the evening — the full ritual, bubbles, treats and goodie bag, all included.
+                        </p>
+                    </div>
+
+                    <!-- Right: price + Stripe placeholder -->
+                    <div class="md:col-span-5 reveal d-3">
+                        <hr class="rule mb-8" style="height:1px;border:0;background:rgba(247,242,233,0.5);" aria-hidden="true">
+                        <p class="label label-cream mb-2">Per Guest</p>
+                        <p class="font-baskervville leading-none mb-2">
+                            <span class="price-currency align-top" style="color: var(--cream-text);">$</span><span class="price-amount"><span class="sr-only">NZD </span>85</span>
+                        </p>
+                        <p class="text-sm mb-8" style="color: var(--cream-text);">NZD &middot; includes everything listed above</p>
+
+                        <!-- Stripe Buy Button (live checkout) — client-only, suits this static site.
+                             The publishable key (pk_live_…) is meant to be public; no secret key is exposed.
+                             Edit price/label/branding in the Stripe Dashboard for this Buy Button. -->
+                        <stripe-buy-button
+                            buy-button-id="buy_btn_1TiRHsQ2TpeKdaGXIBcJRnWg"
+                            publishable-key="pk_live_51TUZcDQ2TpeKdaGXqVhVwT6ey6N9on1HNSM103UaUT1RpgZMFSZGPLpklRi3Yse1ANeWNuscALA83eY2irp39Ayx007qt6l0Qp">
+                        </stripe-buy-button>
+
+                        <p class="mt-7 text-sm" style="color: var(--cream-text);">
+                            Places are limited to keep the evening intimate &mdash; we&rsquo;d love to see you there.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ GOOD TO KNOW / FAQ ============ -->
+        <section class="container mx-auto px-6 py-16 md:py-24" aria-labelledby="faq-title">
+            <div class="grid md:grid-cols-12 gap-10 md:gap-16">
+
+                <div class="md:col-span-4">
+                    <p class="label reveal d-0 mb-5">Good to Know</p>
+                    <h2 id="faq-title" class="display text-4xl md:text-6xl reveal d-0">A few<br>details</h2>
+                </div>
+
+                <div class="md:col-span-7 md:col-start-6 reveal d-1">
+                    <details class="faq" open>
+                        <summary>Who is this evening for?<span class="plus" aria-hidden="true"></span></summary>
+                        <div class="answer">
+                            This is a private, invitation-only evening for our valued clients. Your invitation is just for you —
+                            though if you&rsquo;d love to bring a friend, drop us a line and we&rsquo;ll see what spaces remain.
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary>Do I need to prepare anything?<span class="plus" aria-hidden="true"></span></summary>
+                        <div class="answer">
+                            Not at all. Arrive with a freshly cleansed, makeup-free face if you can, so your skin is ready for
+                            the masks. We&rsquo;ll take care of everything else.
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary>I have sensitive skin or allergies — is that okay?<span class="plus" aria-hidden="true"></span></summary>
+                        <div class="answer">
+                            Absolutely. Our therapists will tailor the masks to your skin on the night. If you have known
+                            sensitivities or allergies, let us know in advance at
+                            <a href="mailto:admin@truenorthritual.com" class="underline" style="color: var(--gold-deep);">admin@truenorthritual.com</a>
+                            so we can plan ahead.
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary>What is your refund or transfer policy?<span class="plus" aria-hidden="true"></span></summary>
+                        <div class="answer">
+                            If your plans change, please get in touch as early as you can and we&rsquo;ll
+                            do our best to help.
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary>Where exactly do I go on the night?<span class="plus" aria-hidden="true"></span></summary>
+                        <div class="answer">
+                            We&rsquo;re on Level 2 at 418 Princes Street, Central Dunedin &mdash; head up and we&rsquo;ll be ready for you.
+                        </div>
+                    </details>
+
+                    <!-- Questions? line -->
+                    <div class="mt-12 pt-8" style="border-top: 1px solid rgba(139,115,85,0.25);">
+                        <p class="lead text-2xl md:text-3xl mb-4">Still wondering something?</p>
+                        <p style="color: var(--ink-soft);" class="leading-relaxed">
+                            We&rsquo;d love to hear from you. Email
+                            <a href="mailto:admin@truenorthritual.com" class="underline hover:opacity-70" style="color: var(--gold-deep);">admin@truenorthritual.com</a>
+                            or call
+                            <a href="tel:02040802259" class="underline hover:opacity-70" style="color: var(--gold-deep);">020 4080 2259</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing line -->
+        <section class="container mx-auto px-6 pb-20 text-center">
+            <div class="ornament max-w-xs mx-auto mb-8" aria-hidden="true">
+                <span class="line"></span><span class="diamond"></span><span class="line r"></span>
+            </div>
+            <p class="lead text-2xl" style="color: var(--gold-deep);">We can&rsquo;t wait to host you.</p>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER (reused shared structure; headings demoted to h2 for valid hierarchy) ============ -->
+    <footer class="bg-white py-12 border-t">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Opening Hours -->
+                <div>
+                    <h2 class="font-baskervville text-xl mb-4">Opening Hours</h2>
+                    <p class="text-gray-700">Monday to Friday 9.30am till 2.30pm<br>Late nights Wednesday 6pm till late</p>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="font-baskervville text-xl mb-4">Contact</h2>
+                    <p class="text-gray-700 mb-2">L2/418 Princes Street<br>Central Dunedin, Dunedin, 9016</p>
+                    <p class="text-gray-700 mb-2">
+                        <a href="tel:02040802259" class="hover:text-gray-900">020 4080 2259</a>
+                    </p>
+                    <p class="text-gray-700">
+                        <a href="mailto:admin@truenorthritual.com" class="hover:text-gray-900 underline">admin@truenorthritual.com</a>
+                    </p>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h2 class="font-baskervville text-xl mb-4">Follow Us</h2>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/truenorthritual" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram" aria-hidden="true">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/truenorthritual" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t text-center text-gray-600">
+                <p>&copy; 2026 True North Ritual. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Stripe Buy Button (client-only checkout) -->
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+    <!-- Shared site JS (smooth-scroll for #reserve anchor, header shadow-on-scroll) -->
+    <script src="js/main.js"></script>
+</body>
+</html>
