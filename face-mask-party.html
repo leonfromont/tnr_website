@@ -478,7 +478,34 @@
         /* Reserve band: deeper gold so white (#fff ~7.4:1) and cream text
            (#FBF7EF ~6.9:1) clear WCAG AA at normal size on this section. */
         #reserve { background-color: var(--gold-deep); }
+
+        /* ---------- Ticket-sales cutoff swap ----------
+           Everything marked data-when="closed" is hidden by default; once the
+           cutoff passes the head script adds .sales-closed to <html> and the
+           two states trade places. Default-hidden means no flash of the
+           "closed" copy while tickets are still on sale. */
+        [data-when="closed"] { display: none; }
+        html.sales-closed [data-when="open"]   { display: none; }
+        html.sales-closed [data-when="closed"] { display: revert; }
     </style>
+
+    <!-- ====================================================================
+         Ticket sales cutoff.
+         SALES_CLOSE_AT is a fixed UTC instant, so it fires at the same real
+         moment for every visitor no matter what timezone their device is in.
+         2026-07-28T20:00:00Z == 8.00am Wed 29 July 2026 NZST (UTC+12).
+         To change the cutoff, edit that one string. To reopen sales, delete
+         this script (or set the date far in the future).
+         Runs in <head> so the page never paints the Stripe button after close.
+         ==================================================================== -->
+    <script>
+        (function () {
+            var SALES_CLOSE_AT = '2026-07-28T20:00:00Z';
+            if (new Date().getTime() >= new Date(SALES_CLOSE_AT).getTime()) {
+                document.documentElement.className += ' sales-closed';
+            }
+        })();
+    </script>
 </head>
 <body class="invite font-franklin">
 
@@ -547,9 +574,13 @@
                     <span class="pill"><span class="dot" aria-hidden="true"></span>An Intimate Evening</span>
                 </div>
 
-                <!-- Primary CTA anchor — native brand btn-primary -->
+                <!-- Primary CTA anchor — native brand btn-primary.
+                     After the cutoff the button is replaced by a closing line. -->
                 <div class="reveal d-6">
-                    <a href="#reserve" class="btn-primary">Reserve Your Spot</a>
+                    <a href="#reserve" class="btn-primary" data-when="open">Reserve Your Spot</a>
+                    <p class="lead text-xl md:text-2xl" data-when="closed" style="color: var(--gold-deep);">
+                        Ticket sales for this evening have closed.
+                    </p>
                 </div>
             </div>
         </section>
@@ -674,32 +705,55 @@
                     <!-- Left: invitation statement -->
                     <div class="md:col-span-7">
                         <p class="label label-cream reveal d-0 mb-5">Your Invitation &middot; Single Ticket</p>
-                        <h2 id="reserve-title" class="display text-4xl md:text-6xl reveal d-1 mb-7">Reserve<br>your spot</h2>
+                        <h2 id="reserve-title" class="display text-4xl md:text-6xl reveal d-1 mb-7">
+                            <span data-when="open">Reserve<br>your spot</span>
+                            <span data-when="closed">Sales have<br>closed</span>
+                        </h2>
                         <p class="reveal d-2 max-w-md text-lg leading-relaxed" style="color: var(--cream-text);">
-                            One ticket secures your place for the evening: the full ritual, bubbles, treats and goodie bag, all included.
+                            <span data-when="open">One ticket secures your place for the evening: the full ritual, bubbles, treats and goodie bag, all included.</span>
+                            <span data-when="closed">Bookings for this evening are now closed. Thank you to everyone who reserved a spot.</span>
                         </p>
                     </div>
 
                     <!-- Right: price + Stripe placeholder -->
                     <div class="md:col-span-5 reveal d-3">
                         <hr class="rule mb-8" style="height:1px;border:0;background:rgba(247,242,233,0.5);" aria-hidden="true">
-                        <p class="label label-cream mb-2">Per Guest</p>
-                        <p class="font-baskervville leading-none mb-2">
-                            <span class="price-currency align-top" style="color: var(--cream-text);">$</span><span class="price-amount"><span class="sr-only">NZD </span>89</span>
-                        </p>
-                        <p class="text-sm mb-8" style="color: var(--cream-text);">NZD &middot; includes everything listed above</p>
 
-                        <!-- Stripe Buy Button (live checkout) — client-only, suits this static site.
-                             The publishable key (pk_live_…) is meant to be public; no secret key is exposed.
-                             Edit price/label/branding in the Stripe Dashboard for this Buy Button. -->
-                        <stripe-buy-button
-                            buy-button-id="buy_btn_1TkZLwQ2TpeKdaGX7SkBF8jM"
-                            publishable-key="pk_live_51TUZcDQ2TpeKdaGXqVhVwT6ey6N9on1HNSM103UaUT1RpgZMFSZGPLpklRi3Yse1ANeWNuscALA83eY2irp39Ayx007qt6l0Qp">
-                        </stripe-buy-button>
+                        <!-- Price + live checkout: shown only while sales are open -->
+                        <div data-when="open">
+                            <p class="label label-cream mb-2">Per Guest</p>
+                            <p class="font-baskervville leading-none mb-2">
+                                <span class="price-currency align-top" style="color: var(--cream-text);">$</span><span class="price-amount"><span class="sr-only">NZD </span>89</span>
+                            </p>
+                            <p class="text-sm mb-8" style="color: var(--cream-text);">NZD &middot; includes everything listed above</p>
 
-                        <p class="mt-7 text-sm" style="color: var(--cream-text);">
-                            Places are limited to keep the evening intimate &mdash; we&rsquo;d love to see you there.
-                        </p>
+                            <!-- Stripe Buy Button (live checkout) — client-only, suits this static site.
+                                 The publishable key (pk_live_…) is meant to be public; no secret key is exposed.
+                                 Edit price/label/branding in the Stripe Dashboard for this Buy Button.
+                                 NOTE: hiding this only closes the on-page path — deactivate the Buy Button
+                                 in the Stripe Dashboard to stop payments for good. -->
+                            <stripe-buy-button
+                                buy-button-id="buy_btn_1TkZLwQ2TpeKdaGX7SkBF8jM"
+                                publishable-key="pk_live_51TUZcDQ2TpeKdaGXqVhVwT6ey6N9on1HNSM103UaUT1RpgZMFSZGPLpklRi3Yse1ANeWNuscALA83eY2irp39Ayx007qt6l0Qp">
+                            </stripe-buy-button>
+
+                            <p class="mt-7 text-sm" style="color: var(--cream-text);">
+                                Places are limited to keep the evening intimate &mdash; we&rsquo;d love to see you there.
+                            </p>
+                        </div>
+
+                        <!-- Post-cutoff notice, in place of the checkout -->
+                        <div data-when="closed">
+                            <p class="label label-cream mb-4">Bookings Closed</p>
+                            <p class="font-baskervville text-2xl md:text-3xl mb-4" style="color: var(--cream-text);">
+                                We&rsquo;re no longer taking tickets for this evening.
+                            </p>
+                            <p class="text-sm" style="color: var(--cream-text);">
+                                If you&rsquo;d still love to join us, email
+                                <a href="mailto:admin@truenorthritual.com" class="underline">admin@truenorthritual.com</a>
+                                and we&rsquo;ll see what we can do.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
