@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An evening at True North Ritual on anti-ageing: industry secrets, lifestyle hacks and making your own mask. Friday 4 September, 6pm. Limited to eight guests. Reserve your spot.">
+    <link rel="canonical" href="https://truenorthritual.com/anti-aging-evening.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://truenorthritual.com/anti-aging-evening.html">
+    <meta property="og:title" content="Make Your Own Mask, Anti-Ageing Master Class | True North Ritual">
+    <meta property="og:description" content="Industry secrets, lifestyle hacks and making your own mask — an intimate evening at our Dunedin studio. Everyone welcome, limited to eight guests.">
+    <meta property="og:image" content="https://truenorthritual.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://truenorthritual.com/anti-aging-evening.html">
+    <meta property="twitter:title" content="Make Your Own Mask, Anti-Ageing Master Class | True North Ritual">
+    <meta property="twitter:description" content="Industry secrets, lifestyle hacks and making your own mask — an intimate evening at our Dunedin studio. Everyone welcome, limited to eight guests.">
+    <meta property="twitter:image" content="https://truenorthritual.com/images/og-image.jpg">
+
+    <title>Make Your Own Mask, Anti-Ageing Master Class | True North Ritual</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHTGPT535J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NHTGPT535J');
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Baskervville & Libre Franklin -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Custom CSS (shared design system) -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- ====================================================================
+         Page-specific styles, shared with face-mask-party.html: editorial
+         invitation layout on a static gold-mesh ground, foil accent word,
+         gold reserve band. All styles scoped to body.invite so nothing
+         leaks into the rest of the site.
+         ==================================================================== -->
+    <style>
+        :root {
+            --cream:       #F7F2E9;
+            --cream-deep:  #F0E8D9;
+            --sand:        #E7DCC7;
+            --gold:        #8B7355;
+            --gold-soft:   #A88E6B;
+            --gold-deep:   #6E5A40;
+            --ink:         #1a1a1a;
+            --ink-soft:    #4a4239;
+            --cream-text:  #FBF7EF; /* opaque cream — used ONLY on gold/ink grounds */
+        }
+
+        body.invite {
+            background-color: var(--cream);
+            color: var(--ink);
+            overflow-x: hidden; /* defensive: protect against any wide display word */
+        }
+
+        /* ---------- Atmospheric layered ground: STATIC soft gold mesh + faint paper grain ---------- */
+        .ground {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-color: var(--cream);
+            background-image:
+                radial-gradient(58% 48% at 50% -8%, rgba(139,115,85,0.15) 0%, rgba(139,115,85,0) 60%),
+                radial-gradient(45% 40% at 8% 22%, rgba(168,142,107,0.11) 0%, rgba(168,142,107,0) 55%),
+                radial-gradient(52% 46% at 92% 86%, rgba(110,90,64,0.11) 0%, rgba(110,90,64,0) 58%);
+        }
+        .ground::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.5;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply;
+        }
+
+        /* ---------- Editorial type system ---------- */
+        .display {
+            font-family: 'Baskervville', serif;
+            line-height: 0.96;
+            letter-spacing: -0.01em;
+        }
+        .lead { font-family: 'Baskervville', serif; font-style: italic; }
+
+        /* Foil gold for at most TWO display phrases. Solid color set FIRST so the
+           text can never render invisibly where background-clip:text is unsupported. */
+        .foil {
+            color: var(--gold-deep);
+            background: linear-gradient(100deg, #6E5A40 0%, #8B7355 30%, #9A7E55 50%, #8B7355 68%, #6E5A40 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+            .foil { color: transparent; -webkit-text-fill-color: transparent; }
+        }
+
+        /* Small-caps editorial labels with a graded tracking scale. */
+        .label {
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--gold-deep);
+        }
+        @media (min-width: 768px) { .label { font-size: 0.74rem; letter-spacing: 0.36em; } }
+        .label-cream { color: var(--cream-text); }
+        .eyebrow {
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--gold-deep);
+        }
+        @media (min-width: 480px) { .eyebrow { letter-spacing: 0.42em; font-size: 0.7rem; } }
+
+        /* Hairline rules — crisp gold */
+        .rule { height: 1px; background: var(--gold); border: 0; }
+        .rule-soft { background: rgba(139,115,85,0.28); }
+
+        /* Oversized editorial numerals (decorative; meaning carried by the h3) */
+        .numeral {
+            font-family: 'Baskervville', serif;
+            font-style: italic;
+            line-height: 0.8;
+            color: var(--gold);
+            font-size: clamp(3rem, 9vw, 6rem);
+        }
+
+        /* Header wordmark */
+        .wordmark {
+            font-family: 'Baskervville', serif;
+            letter-spacing: 0.06em;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        /* ---------- Diamond + flourish ornament divider ---------- */
+        .ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.9rem;
+            color: var(--gold);
+        }
+        .ornament .line { height: 1px; width: 56px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+        .ornament .line.r { background: linear-gradient(90deg, var(--gold-soft), transparent); }
+        .ornament .diamond {
+            width: 7px; height: 7px;
+            transform: rotate(45deg);
+            background: var(--gold);
+            box-shadow: 0 0 0 4px rgba(139,115,85,0.16);
+        }
+
+        /* ---------- Invitation card — soft pressed-paper panel ---------- */
+        .card {
+            background: linear-gradient(180deg, #FBF7EF 0%, #F6EFE2 100%);
+            border: 1px solid rgba(139,115,85,0.28);
+            box-shadow:
+                0 1px 0 rgba(255,255,255,0.7) inset,
+                0 30px 60px -30px rgba(110,90,64,0.35),
+                0 8px 24px -16px rgba(110,90,64,0.25);
+        }
+
+        /* Badge pill with a gentle pulse */
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            border: 1px solid rgba(139,115,85,0.45);
+            border-radius: 999px;
+            padding: 0.5rem 1.15rem;
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gold-deep);
+            background: rgba(255,255,255,0.4);
+        }
+        @media (min-width: 480px) { .pill { letter-spacing: 0.24em; font-size: 0.66rem; } }
+        .pill .dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 0 0 rgba(139,115,85,0.45);
+            animation: pulse 2.8s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%   { box-shadow: 0 0 0 0 rgba(139,115,85,0.45); }
+            70%  { box-shadow: 0 0 0 7px rgba(139,115,85,0); }
+            100% { box-shadow: 0 0 0 0 rgba(139,115,85,0); }
+        }
+
+        /* Topics: gallery rows with hover lift */
+        .inclusion {
+            border-top: 1px solid rgba(139,115,85,0.25);
+            transition: background .4s ease;
+        }
+        .inclusion:hover { background: rgba(255,255,255,0.4); }
+        .inclusion:hover .incl-num { color: var(--gold-deep); transform: translateX(4px); }
+        .incl-num { transition: color .4s ease, transform .4s ease; }
+
+        /* Detail definition rows */
+        .detail-row {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            align-items: baseline;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(139,115,85,0.2);
+        }
+        .detail-row:last-child { border-bottom: 0; }
+        .detail-label {
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.28em;
+            font-size: 0.66rem;
+            font-weight: 600;
+            color: var(--gold-deep);
+            white-space: nowrap;
+        }
+
+        /* ---------- Placeholder checkout button (light-on-deep-gold within reserve band) ---------- */
+        #stripe-checkout {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            width: 100%;
+            max-width: 24rem;
+            background: var(--cream-text);
+            color: var(--ink);
+            font-family: 'Libre Franklin', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            padding: 1.15rem 2.5rem;
+            border-radius: 0.375rem;
+            border: 1px solid var(--cream-text);
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 18px 40px -16px rgba(0,0,0,0.45);
+            transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+        }
+        #stripe-checkout:hover {
+            transform: translateY(-3px);
+            background: #fff;
+            box-shadow: 0 26px 50px -18px rgba(0,0,0,0.5);
+        }
+        /* Disabled placeholder state: still clearly readable, but visually inert */
+        #stripe-checkout:disabled {
+            cursor: default;
+            opacity: 0.92;
+        }
+        #stripe-checkout:disabled:hover {
+            transform: none;
+            background: var(--cream-text);
+            box-shadow: 0 18px 40px -16px rgba(0,0,0,0.45);
+        }
+
+        /* Price block: sized with clamp + wrapping so the amount scales/wraps and
+           never overflows the column at ~360px. */
+        .price-amount {
+            font-size: clamp(3rem, 16vw, 6rem);
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+        .price-currency { font-size: clamp(1.5rem, 6vw, 2.5rem); }
+
+        /* Screen-reader-only utility */
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+
+        /* ---------- Choreographed pure-CSS page-load reveal (no JS gating of any content) ---------- */
+        @keyframes riseIn {
+            0%   { opacity: 0; transform: translateY(22px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes drawRule {
+            0%   { transform: scaleX(0); }
+            100% { transform: scaleX(1); }
+        }
+
+        .reveal      { opacity: 0; animation: riseIn .9s cubic-bezier(.2,.7,.2,1) forwards; }
+        .reveal-rule { transform: scaleX(0); transform-origin: center; animation: drawRule 1s cubic-bezier(.2,.7,.2,1) forwards; }
+
+        .d-0 { animation-delay: 0.05s; }
+        .d-1 { animation-delay: 0.20s; }
+        .d-2 { animation-delay: 0.35s; }
+        .d-3 { animation-delay: 0.50s; }
+        .d-4 { animation-delay: 0.65s; }
+        .d-5 { animation-delay: 0.80s; }
+        .d-6 { animation-delay: 0.95s; }
+
+        /* Thorough reduced-motion fallback */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .reveal-rule, .pill .dot {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .ground::after { display: none; }
+            #stripe-checkout:hover { transform: none; }
+            html { scroll-behavior: auto; }
+        }
+
+        /* Accessible focus states — visible gold ring */
+        a:focus-visible,
+        #stripe-checkout:focus-visible {
+            outline: 2px solid var(--gold-deep);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+        /* On the gold band, the focus ring switches to cream for contrast */
+        .on-gold a:focus-visible,
+        .on-gold #stripe-checkout:focus-visible {
+            outline-color: var(--cream-text);
+        }
+
+        /* Deterministic hero cap — fits within 320–360px */
+        .hero-title {
+            font-size: clamp(2.5rem, 11vw, 6rem);
+            line-height: 0.94;
+            letter-spacing: -0.01em;
+        }
+
+        /* Reserve band: deeper gold so white (#fff ~7.4:1) and cream text
+           (#FBF7EF ~6.9:1) clear WCAG AA at normal size on this section. */
+        #reserve { background-color: var(--gold-deep); }
+    </style>
+</head>
+<body class="invite font-franklin">
+
+    <!-- Static atmospheric background -->
+    <div class="ground" aria-hidden="true"></div>
+
+    <!-- ============ SHARED SITE HEADER (public page — reached from the Events nav item) ============ -->
+    <header class="fixed w-full top-0 bg-white shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-end items-center">
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="treatments.html" class="nav-link">Skin Therapies</a>
+                    <a href="microneedling.html" class="nav-link">Microneedling</a>
+                    <a href="eye-enhancements.html" class="nav-link">Eye Enhancements</a>
+                    <a href="anti-aging-evening.html" class="nav-link active">Events</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="https://app.truenorthritual.com" class="nav-link">Login</a>
+                    <a href="book.html" class="nav-link nav-link-cta">Book Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 nav-link">Home</a>
+                <a href="about.html" class="block py-2 nav-link">About</a>
+                <a href="treatments.html" class="block py-2 nav-link">Skin Therapies</a>
+                <a href="microneedling.html" class="block py-2 nav-link">Microneedling</a>
+                <a href="eye-enhancements.html" class="block py-2 nav-link">Eye Enhancements</a>
+                <a href="anti-aging-evening.html" class="block py-2 nav-link active">Events</a>
+                <a href="contact.html" class="block py-2 nav-link">Contact</a>
+                <a href="https://app.truenorthritual.com" class="block py-2 nav-link">Login</a>
+                <a href="book.html" class="block py-2 nav-link nav-link-cta">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ============ EVENT HERO ============ -->
+        <section class="container mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-24 mt-20" aria-labelledby="event-title">
+
+            <!-- Top meta line: open event + place -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-10 md:mb-14">
+                <p class="label reveal d-0">An Evening at the Studio</p>
+                <p class="label reveal d-0">Dunedin &middot; Aotearoa</p>
+            </div>
+
+            <div class="text-center">
+                <p class="eyebrow reveal d-1 mb-4">Everyone welcome</p>
+
+                <!-- Evening descriptor as kicker -->
+                <p class="lead text-xl md:text-2xl reveal d-1 mb-5" style="color: var(--gold-deep);">Industry Secrets &amp; Lifestyle Hacks</p>
+
+                <!-- Oversized editorial headline — foil reserved for the single accent word -->
+                <h1 id="event-title" class="font-baskervville hero-title reveal d-2 mb-7">
+                    Make Your Own <span class="foil">Mask</span><br>Anti-Ageing Master Class
+                </h1>
+
+                <!-- Animated crisp gold rule -->
+                <div class="flex justify-center">
+                    <hr class="rule reveal-rule d-3 mb-9 w-24" style="height:2px;border:0;" aria-hidden="true">
+                </div>
+
+                <!-- Hook -->
+                <p class="reveal d-3 text-lg md:text-xl mx-auto max-w-xl mb-8 leading-relaxed" style="color: var(--ink-soft);">
+                    An evening in our studio on ageing well: what actually works, what the
+                    industry doesn&rsquo;t tell you, and the everyday habits that make the
+                    biggest difference. And it&rsquo;s not all talk &mdash; you&rsquo;ll be
+                    making your own mask on the night.
+                </p>
+
+                <!-- Key logistics line: date / time / full studio address -->
+                <div class="reveal d-4 space-y-1.5 mb-8">
+                    <p class="font-baskervville text-xl md:text-2xl">Friday 4 September</p>
+                    <p class="text-sm md:text-base tracking-wide" style="color: var(--ink-soft);">
+                        From 6pm
+                    </p>
+                    <p class="text-sm md:text-base" style="color: var(--ink-soft);">
+                        True North Ritual &middot; L2/418 Princes Street, Central Dunedin
+                    </p>
+                </div>
+
+                <!-- Badges: open to all + capacity -->
+                <div class="reveal d-5 flex flex-wrap items-center justify-center gap-3 mb-9">
+                    <span class="pill"><span class="dot" aria-hidden="true"></span>Everyone Welcome</span>
+                    <span class="pill"><span class="dot" aria-hidden="true"></span>Limited to Eight Guests</span>
+                </div>
+
+                <!-- Primary CTA anchor — native brand btn-primary -->
+                <div class="reveal d-6">
+                    <a href="#reserve" class="btn-primary">Reserve Your Spot</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ WHAT WE'LL COVER ============ -->
+        <section class="container mx-auto px-6 py-14 md:py-24" aria-labelledby="expect-title">
+
+            <!-- Asymmetric editorial intro split: heading vs lede -->
+            <div class="grid md:grid-cols-12 gap-6 md:gap-12 items-end mb-12 md:mb-16">
+                <div class="md:col-span-7">
+                    <p class="label reveal d-0 mb-5">The Evening</p>
+                    <h2 id="expect-title" class="display text-4xl md:text-6xl reveal d-0">What&rsquo;s<br>included</h2>
+                </div>
+                <div class="md:col-span-5 reveal d-0 md:pb-2">
+                    <p class="text-lg leading-relaxed" style="color: var(--ink-soft);">
+                        A small group, an honest conversation, and a hands-on couple of
+                        hours for your skin. During the evening you&rsquo;ll&hellip;
+                    </p>
+                </div>
+            </div>
+
+            <!-- Topics as gallery rows with oversized numerals (decorative, aria-hidden) -->
+            <div>
+                <article class="inclusion reveal d-0 py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8 md:items-start">
+                    <div class="md:col-span-2"><span class="numeral incl-num inline-block" aria-hidden="true">01</span></div>
+                    <h3 class="md:col-span-4 font-baskervville text-2xl md:text-3xl">Skin ageing, explained</h3>
+                    <p class="md:col-span-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Learn the causes of skin ageing and what you can actually do about it.
+                    </p>
+                </article>
+
+                <article class="inclusion reveal d-1 py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8 md:items-start">
+                    <div class="md:col-span-2"><span class="numeral incl-num inline-block" aria-hidden="true">02</span></div>
+                    <h3 class="md:col-span-4 font-baskervville text-2xl md:text-3xl">A complete evening routine</h3>
+                    <p class="md:col-span-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Work through a complete evening skincare routine together, step by step.
+                    </p>
+                </article>
+
+                <article class="inclusion reveal d-2 py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8 md:items-start">
+                    <div class="md:col-span-2"><span class="numeral incl-num inline-block" aria-hidden="true">03</span></div>
+                    <h3 class="md:col-span-4 font-baskervville text-2xl md:text-3xl">Guided facial massage</h3>
+                    <p class="md:col-span-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Experience guided facial massage to release tension and support healthy, glowing skin.
+                    </p>
+                </article>
+
+                <article class="inclusion reveal d-3 py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8 md:items-start">
+                    <div class="md:col-span-2"><span class="numeral incl-num inline-block" aria-hidden="true">04</span></div>
+                    <h3 class="md:col-span-4 font-baskervville text-2xl md:text-3xl">Your own custom mask</h3>
+                    <p class="md:col-span-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Create your very own customised professional-grade face mask to suit your skin&rsquo;s unique needs.
+                    </p>
+                </article>
+
+                <article class="inclusion reveal d-4 py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8 md:items-start">
+                    <div class="md:col-span-2"><span class="numeral incl-num inline-block" aria-hidden="true">05</span></div>
+                    <h3 class="md:col-span-4 font-baskervville text-2xl md:text-3xl">While your mask works</h3>
+                    <p class="md:col-span-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Enjoy a relaxing mask while we chat about ingredients that work, common skincare myths and how to get the most from your routine.
+                    </p>
+                </article>
+
+                <article class="inclusion reveal d-5 py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8 md:items-start">
+                    <div class="md:col-span-2"><span class="numeral incl-num inline-block" aria-hidden="true">06</span></div>
+                    <h3 class="md:col-span-4 font-baskervville text-2xl md:text-3xl">Nibbles &amp; drinks</h3>
+                    <p class="md:col-span-6 leading-relaxed" style="color: var(--ink-soft);">
+                        A drink in hand and a few little bites to enjoy as the evening unwinds.
+                    </p>
+                </article>
+
+                <article class="inclusion reveal d-6 py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8 md:items-start">
+                    <div class="md:col-span-2"><span class="numeral incl-num inline-block" aria-hidden="true">07</span></div>
+                    <h3 class="md:col-span-4 font-baskervville text-2xl md:text-3xl">A goodie bag</h3>
+                    <p class="md:col-span-6 leading-relaxed" style="color: var(--ink-soft);">
+                        A little goodie bag to take home, so the evening doesn&rsquo;t end when you leave.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ AT A GLANCE ============ -->
+        <section class="container mx-auto px-6 py-12 md:py-20" aria-labelledby="details-title">
+
+            <div class="text-center mb-12 md:mb-16">
+                <div class="ornament reveal d-0 mb-6" aria-hidden="true">
+                    <span class="line"></span><span class="diamond"></span><span class="line r"></span>
+                </div>
+                <p class="label reveal d-0 mb-4">The Particulars</p>
+                <h2 id="details-title" class="display text-4xl md:text-6xl reveal d-0">At a glance</h2>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="card rounded-sm px-7 py-9 md:px-10 md:py-10 reveal d-1">
+                    <dl>
+                        <div class="detail-row">
+                            <dt class="detail-label">Date</dt>
+                            <dd class="text-right font-baskervville text-lg">Friday 4 September</dd>
+                        </div>
+                        <div class="detail-row">
+                            <dt class="detail-label">Time</dt>
+                            <dd class="text-right font-baskervville text-lg">From 6pm</dd>
+                        </div>
+                        <div class="detail-row">
+                            <dt class="detail-label">Location</dt>
+                            <dd class="text-right" style="color: var(--ink-soft);">L2/418 Princes Street,<br>Central Dunedin, Dunedin 9016</dd>
+                        </div>
+                        <div class="detail-row">
+                            <dt class="detail-label">Price</dt>
+                            <dd class="text-right" style="color: var(--ink-soft);">$149 NZD per guest</dd>
+                        </div>
+                        <div class="detail-row">
+                            <dt class="detail-label">Guests</dt>
+                            <dd class="text-right" style="color: var(--ink-soft);">Everyone welcome &mdash; limited to eight places</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ RESERVE / TICKET (deep-gold band; white/cream text clears WCAG AA) ============ -->
+        <section id="reserve" class="on-gold text-white scroll-mt-24" aria-labelledby="reserve-title">
+            <div class="container mx-auto px-6 py-20 md:py-28">
+                <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+
+                    <!-- Left: reservation statement -->
+                    <div class="md:col-span-7">
+                        <p class="label label-cream reveal d-0 mb-5">Your Ticket &middot; Eight Places</p>
+                        <h2 id="reserve-title" class="display text-4xl md:text-6xl reveal d-1 mb-7">Reserve<br>your spot</h2>
+                        <p class="reveal d-2 max-w-md text-lg leading-relaxed" style="color: var(--cream-text);">
+                            One ticket secures your place for the evening: the full session,
+                            your custom mask, nibbles, drinks and goodie bag, all included.
+                            With just eight spots, we expect them to go quickly.
+                        </p>
+                    </div>
+
+                    <!-- Right: price + checkout -->
+                    <div class="md:col-span-5 reveal d-3">
+                        <hr class="rule mb-8" style="height:1px;border:0;background:rgba(247,242,233,0.5);" aria-hidden="true">
+                        <p class="label label-cream mb-2">Per Guest</p>
+                        <p class="font-baskervville leading-none mb-2">
+                            <span class="price-currency align-top" style="color: var(--cream-text);">$</span><span class="price-amount"><span class="sr-only">NZD </span>149</span>
+                        </p>
+                        <p class="text-sm mb-8" style="color: var(--cream-text);">NZD &middot; per person</p>
+
+                        <!-- Stripe Buy Button (live checkout) — client-only, suits this static site.
+                             The publishable key (pk_live_…) is meant to be public; no secret key is exposed.
+                             Edit price/label/branding in the Stripe Dashboard for this Buy Button. -->
+                        <stripe-buy-button
+                            buy-button-id="buy_btn_1TzXYxQ2TpeKdaGXdtj3ezGv"
+                            publishable-key="pk_live_51TUZcDQ2TpeKdaGXqVhVwT6ey6N9on1HNSM103UaUT1RpgZMFSZGPLpklRi3Yse1ANeWNuscALA83eY2irp39Ayx007qt6l0Qp">
+                        </stripe-buy-button>
+
+                        <p class="mt-7 text-sm" style="color: var(--cream-text);">
+                            Eight places keep the evening personal, with time for everyone&rsquo;s questions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing line -->
+        <section class="container mx-auto px-6 pb-20 text-center">
+            <div class="ornament max-w-xs mx-auto mb-8" aria-hidden="true">
+                <span class="line"></span><span class="diamond"></span><span class="line r"></span>
+            </div>
+            <p class="lead text-2xl" style="color: var(--gold-deep);">We&rsquo;d love to see you there.</p>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER (reused shared structure; headings demoted to h2 for valid hierarchy) ============ -->
+    <footer class="bg-white py-12 border-t">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Opening Hours -->
+                <div>
+                    <h2 class="font-baskervville text-xl mb-4">Opening Hours</h2>
+                    <p class="text-gray-700">Monday to Friday 9.30am till 2.30pm<br>Late nights Wednesday 6pm till late</p>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="font-baskervville text-xl mb-4">Contact</h2>
+                    <p class="text-gray-700 mb-2">L2/418 Princes Street<br>Central Dunedin, Dunedin, 9016</p>
+                    <p class="text-gray-700 mb-2">
+                        <a href="tel:02040802259" class="hover:text-gray-900">020 4080 2259</a>
+                    </p>
+                    <p class="text-gray-700">
+                        <a href="mailto:admin@truenorthritual.com" class="hover:text-gray-900 underline">admin@truenorthritual.com</a>
+                    </p>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h2 class="font-baskervville text-xl mb-4">Follow Us</h2>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/truenorthritual" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram" aria-hidden="true">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/truenorthritual" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t text-center text-gray-600">
+                <p>&copy; 2026 True North Ritual. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Stripe Buy Button (client-only checkout) -->
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+    <!-- Shared site JS (smooth-scroll for #reserve anchor, header shadow-on-scroll) -->
+    <script src="js/main.js"></script>
+</body>
+</html>
