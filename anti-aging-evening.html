@@ -280,13 +280,20 @@
         }
 
         /* Price block: sized with clamp + wrapping so the amount scales/wraps and
-           never overflows the column at ~360px. */
+           never overflows the column at ~360px. The dollar sign sits ON the
+           numerals' baseline (not the top of the line box, which leaves it
+           orphaned above a three-digit price) at roughly half their size. */
+        .price-line {
+            display: flex;
+            align-items: baseline;
+            gap: 0.06em;
+        }
         .price-amount {
-            font-size: clamp(3rem, 16vw, 6rem);
+            font-size: clamp(3rem, 15vw, 5.5rem);
             overflow-wrap: anywhere;
             word-break: break-word;
         }
-        .price-currency { font-size: clamp(1.5rem, 6vw, 2.5rem); }
+        .price-currency { font-size: clamp(1.75rem, 7vw, 2.75rem); }
 
         /* Screen-reader-only utility */
         .sr-only {
@@ -594,8 +601,8 @@
                     <div class="md:col-span-5 reveal d-3">
                         <hr class="rule mb-8" style="height:1px;border:0;background:rgba(247,242,233,0.5);" aria-hidden="true">
                         <p class="label label-cream mb-2">Per Guest</p>
-                        <p class="font-baskervville leading-none mb-2">
-                            <span class="price-currency align-top" style="color: var(--cream-text);">$</span><span class="price-amount"><span class="sr-only">NZD </span>149</span>
+                        <p class="price-line font-baskervville leading-none mb-2" style="color: var(--cream-text);">
+                            <span class="price-currency">$</span><span class="price-amount"><span class="sr-only">NZD </span>149</span>
                         </p>
                         <p class="text-sm mb-8" style="color: var(--cream-text);">NZD &middot; per person</p>
 
