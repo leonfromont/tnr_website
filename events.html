@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Upcoming evenings at True North Ritual: skincare master classes, mask nights and private events at our Dunedin studio. See what's on and reserve your place.">
+    <link rel="canonical" href="https://truenorthritual.com/events.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://truenorthritual.com/events.html">
+    <meta property="og:title" content="Events | True North Ritual">
+    <meta property="og:description" content="Skincare master classes, mask nights and private evenings at our Dunedin studio. See what's coming up.">
+    <meta property="og:image" content="https://truenorthritual.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://truenorthritual.com/events.html">
+    <meta property="twitter:title" content="Events | True North Ritual">
+    <meta property="twitter:description" content="Skincare master classes, mask nights and private evenings at our Dunedin studio. See what's coming up.">
+    <meta property="twitter:image" content="https://truenorthritual.com/images/og-image.jpg">
+
+    <title>Events | True North Ritual</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHTGPT535J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NHTGPT535J');
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Baskervville & Libre Franklin -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Custom CSS (shared design system) -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- ====================================================================
+         Events index. Shares the editorial invitation language used by the
+         individual event pages (gold/cream palette, Baskervville display
+         type, hairline rules) so the listing and the detail pages read as
+         one family. Scoped to body.invite.
+         ==================================================================== -->
+    <style>
+        :root {
+            --cream:       #F7F2E9;
+            --sand:        #E7DCC7;
+            --gold:        #8B7355;
+            --gold-soft:   #A88E6B;
+            --gold-deep:   #6E5A40;
+            --ink:         #1a1a1a;
+            --ink-soft:    #4a4239;
+            --cream-text:  #FBF7EF;
+        }
+
+        body.invite {
+            background-color: var(--cream);
+            color: var(--ink);
+            overflow-x: hidden;
+        }
+
+        /* ---------- Atmospheric layered ground ---------- */
+        .ground {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-color: var(--cream);
+            background-image:
+                radial-gradient(58% 48% at 50% -8%, rgba(139,115,85,0.15) 0%, rgba(139,115,85,0) 60%),
+                radial-gradient(45% 40% at 8% 22%, rgba(168,142,107,0.11) 0%, rgba(168,142,107,0) 55%),
+                radial-gradient(52% 46% at 92% 86%, rgba(110,90,64,0.11) 0%, rgba(110,90,64,0) 58%);
+        }
+        .ground::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.5;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply;
+        }
+
+        /* ---------- Editorial type system ---------- */
+        .display {
+            font-family: 'Baskervville', serif;
+            line-height: 0.96;
+            letter-spacing: -0.01em;
+        }
+        .lead { font-family: 'Baskervville', serif; font-style: italic; }
+
+        .foil {
+            color: var(--gold-deep);
+            background: linear-gradient(100deg, #6E5A40 0%, #8B7355 30%, #9A7E55 50%, #8B7355 68%, #6E5A40 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+            .foil { color: transparent; -webkit-text-fill-color: transparent; }
+        }
+
+        .label {
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--gold-deep);
+        }
+        @media (min-width: 768px) { .label { font-size: 0.74rem; letter-spacing: 0.36em; } }
+
+        .rule { height: 1px; background: var(--gold); border: 0; }
+        .rule-soft { background: rgba(139,115,85,0.28); }
+
+        .hero-title {
+            font-size: clamp(2.75rem, 11vw, 6rem);
+            line-height: 0.94;
+            letter-spacing: -0.01em;
+        }
+
+        /* ---------- Ornament divider ---------- */
+        .ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.9rem;
+            color: var(--gold);
+        }
+        .ornament .line { height: 1px; width: 56px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+        .ornament .line.r { background: linear-gradient(90deg, var(--gold-soft), transparent); }
+        .ornament .diamond {
+            width: 7px; height: 7px;
+            transform: rotate(45deg);
+            background: var(--gold);
+            box-shadow: 0 0 0 4px rgba(139,115,85,0.16);
+        }
+
+        /* ---------- Event rows ---------- */
+        .event {
+            border-top: 1px solid rgba(139,115,85,0.25);
+            transition: background .4s ease;
+        }
+        .event:last-of-type { border-bottom: 1px solid rgba(139,115,85,0.25); }
+        .event:hover { background: rgba(255,255,255,0.35); }
+
+        /* Date stack */
+        .event-date {
+            font-family: 'Baskervville', serif;
+            line-height: 0.95;
+        }
+        .event-day { font-size: clamp(2.5rem, 7vw, 3.75rem); display: block; }
+        .event-month {
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.28em;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gold-deep);
+            display: block;
+            margin-top: 0.5rem;
+        }
+        .event-tbc {
+            font-family: 'Baskervville', serif;
+            font-style: italic;
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            color: var(--gold-soft);
+            line-height: 1;
+        }
+
+        /* Status chips */
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            border: 1px solid rgba(139,115,85,0.45);
+            border-radius: 999px;
+            padding: 0.45rem 1.05rem;
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.64rem;
+            font-weight: 600;
+            color: var(--gold-deep);
+            background: rgba(255,255,255,0.45);
+            white-space: nowrap;
+        }
+        .status .dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--gold);
+            flex: none;
+        }
+        /* Muted variant for events that can't be booked */
+        .status-muted {
+            color: var(--ink-soft);
+            border-color: rgba(74,66,57,0.28);
+            background: transparent;
+        }
+        .status-muted .dot { background: var(--ink-soft); opacity: 0.45; }
+
+        /* Detail link */
+        .event-link {
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gold-deep);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139,115,85,0.5);
+            padding-bottom: 2px;
+            transition: color .3s ease, border-color .3s ease;
+            white-space: nowrap;
+        }
+        .event-link:hover { color: var(--ink); border-color: var(--ink); }
+
+        .event-note {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 0.8rem;
+            color: var(--ink-soft);
+        }
+
+        /* ---------- Enquiry band ---------- */
+        #enquire { background-color: var(--gold-deep); }
+        .btn-cream {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--cream-text);
+            color: var(--ink);
+            font-family: 'Libre Franklin', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            padding: 1.05rem 2.25rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+            box-shadow: 0 18px 40px -16px rgba(0,0,0,0.45);
+        }
+        .btn-cream:hover {
+            transform: translateY(-3px);
+            background: #fff;
+            box-shadow: 0 26px 50px -18px rgba(0,0,0,0.5);
+        }
+
+        /* ---------- Page-load reveal ---------- */
+        @keyframes riseIn {
+            0%   { opacity: 0; transform: translateY(22px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes drawRule {
+            0%   { transform: scaleX(0); }
+            100% { transform: scaleX(1); }
+        }
+        .reveal      { opacity: 0; animation: riseIn .9s cubic-bezier(.2,.7,.2,1) forwards; }
+        .reveal-rule { transform: scaleX(0); transform-origin: center; animation: drawRule 1s cubic-bezier(.2,.7,.2,1) forwards; }
+
+        .d-0 { animation-delay: 0.05s; }
+        .d-1 { animation-delay: 0.20s; }
+        .d-2 { animation-delay: 0.35s; }
+        .d-3 { animation-delay: 0.50s; }
+        .d-4 { animation-delay: 0.65s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .reveal-rule {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .ground::after { display: none; }
+            .btn-cream:hover { transform: none; }
+            html { scroll-behavior: auto; }
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--gold-deep);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+        .on-gold a:focus-visible { outline-color: var(--cream-text); }
+    </style>
+</head>
+<body class="invite font-franklin">
+
+    <!-- Static atmospheric background -->
+    <div class="ground" aria-hidden="true"></div>
+
+    <!-- ============ SHARED SITE HEADER ============ -->
+    <header class="fixed w-full top-0 bg-white shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-end items-center">
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="treatments.html" class="nav-link">Skin Therapies</a>
+                    <a href="microneedling.html" class="nav-link">Microneedling</a>
+                    <a href="eye-enhancements.html" class="nav-link">Eye Enhancements</a>
+                    <a href="events.html" class="nav-link active">Events</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="https://app.truenorthritual.com" class="nav-link">Login</a>
+                    <a href="book.html" class="nav-link nav-link-cta">Book Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 nav-link">Home</a>
+                <a href="about.html" class="block py-2 nav-link">About</a>
+                <a href="treatments.html" class="block py-2 nav-link">Skin Therapies</a>
+                <a href="microneedling.html" class="block py-2 nav-link">Microneedling</a>
+                <a href="eye-enhancements.html" class="block py-2 nav-link">Eye Enhancements</a>
+                <a href="events.html" class="block py-2 nav-link active">Events</a>
+                <a href="contact.html" class="block py-2 nav-link">Contact</a>
+                <a href="https://app.truenorthritual.com" class="block py-2 nav-link">Login</a>
+                <a href="book.html" class="block py-2 nav-link nav-link-cta">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ============ HERO ============ -->
+        <section class="container mx-auto px-6 pt-12 pb-12 md:pt-16 md:pb-16 mt-20" aria-labelledby="page-title">
+
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-10 md:mb-14">
+                <p class="label reveal d-0">At the Studio</p>
+                <p class="label reveal d-0">Dunedin &middot; Aotearoa</p>
+            </div>
+
+            <div class="text-center">
+                <p class="lead text-xl md:text-2xl reveal d-1 mb-5" style="color: var(--gold-deep);">Evenings at True North Ritual</p>
+
+                <h1 id="page-title" class="font-baskervville hero-title reveal d-2 mb-7">
+                    What&rsquo;s <span class="foil">On</span>
+                </h1>
+
+                <div class="flex justify-center">
+                    <hr class="rule reveal-rule d-3 mb-9 w-24" style="height:2px;border:0;" aria-hidden="true">
+                </div>
+
+                <p class="reveal d-3 text-lg md:text-xl mx-auto max-w-xl leading-relaxed" style="color: var(--ink-soft);">
+                    Small, unhurried evenings in our studio, part master class, part
+                    ritual. Places are always limited so there is time for everyone&rsquo;s
+                    skin and everyone&rsquo;s questions.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ EVENT LISTING ============ -->
+        <section class="container mx-auto px-6 pb-16 md:pb-24" aria-labelledby="listing-title">
+            <h2 id="listing-title" class="sr-only">Upcoming events</h2>
+
+            <div>
+
+                <!-- ---------- Event 1: Anti-Ageing Master Class — booked out ---------- -->
+                <article class="event reveal d-0 py-8 md:py-11 grid md:grid-cols-12 gap-5 md:gap-8 md:items-center">
+                    <div class="md:col-span-2">
+                        <p class="event-date">
+                            <span class="event-day">4</span>
+                            <span class="event-month">Fri &middot; Sept</span>
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-6">
+                        <h3 class="font-baskervville text-2xl md:text-3xl mb-2">
+                            Make Your Own Mask, Anti-Ageing Master Class
+                        </h3>
+                        <p class="leading-relaxed" style="color: var(--ink-soft);">
+                            What causes skin ageing and what actually works, a complete evening
+                            routine, guided facial massage and your own customised
+                            professional-grade face mask. From 6pm.
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-4 flex flex-wrap items-center gap-4 md:justify-end">
+                        <span class="status status-muted"><span class="dot" aria-hidden="true"></span>Booked Out</span>
+                        <a href="anti-aging-evening.html" class="event-link">View details</a>
+                    </div>
+                </article>
+
+                <!-- ---------- Event 2: private booking — no public tickets ---------- -->
+                <article class="event reveal d-1 py-8 md:py-11 grid md:grid-cols-12 gap-5 md:gap-8 md:items-center">
+                    <div class="md:col-span-2">
+                        <p class="event-date">
+                            <span class="event-day">18</span>
+                            <span class="event-month">Fri &middot; Sept</span>
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-6">
+                        <h3 class="font-baskervville text-2xl md:text-3xl mb-2">
+                            Private Party
+                        </h3>
+                        <p class="leading-relaxed" style="color: var(--ink-soft);">
+                            The studio is booked out for a private group this evening. If you
+                            would like to arrange something similar for your own people, we
+                            would love to hear from you.
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-4 flex flex-wrap items-center gap-4 md:justify-end">
+                        <span class="status status-muted"><span class="dot" aria-hidden="true"></span>Private Event</span>
+                        <span class="event-note">Not open for tickets</span>
+                    </div>
+                </article>
+
+                <!-- ---------- Event 3: next face mask evening — date TBC ---------- -->
+                <article class="event reveal d-2 py-8 md:py-11 grid md:grid-cols-12 gap-5 md:gap-8 md:items-center">
+                    <div class="md:col-span-2">
+                        <p class="event-tbc">Dates<br>to come</p>
+                    </div>
+
+                    <div class="md:col-span-6">
+                        <h3 class="font-baskervville text-2xl md:text-3xl mb-2">
+                            The Custom Face Mask Experience
+                        </h3>
+                        <p class="leading-relaxed" style="color: var(--ink-soft);">
+                            Our mask evening returns: layered masks, a guided skincare ritual,
+                            bubbles and treats, and a mask blended for your own skin. Dates for
+                            the next one are being set now.
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-4 flex flex-wrap items-center gap-4 md:justify-end">
+                        <span class="status"><span class="dot" aria-hidden="true"></span>Coming Soon</span>
+                        <span class="event-note">Register your interest</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ============ ENQUIRY BAND ============ -->
+        <section id="enquire" class="on-gold text-white" aria-labelledby="enquire-title">
+            <div class="container mx-auto px-6 py-16 md:py-24">
+                <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+
+                    <div class="md:col-span-7">
+                        <p class="label reveal d-0 mb-5" style="color: var(--cream-text);">Keep In Touch</p>
+                        <h2 id="enquire-title" class="display text-4xl md:text-5xl reveal d-1 mb-6">Don&rsquo;t miss<br>the next one</h2>
+                        <p class="reveal d-2 max-w-md text-lg leading-relaxed" style="color: var(--cream-text);">
+                            Our evenings are small and they fill quickly. Send us a note and we
+                            will let you know the moment the next set of dates opens, or to talk
+                            about booking the studio privately for your own group.
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-5 reveal d-3 md:text-right">
+                        <a href="contact.html" class="btn-cream">Get In Touch</a>
+                        <p class="mt-6 text-sm" style="color: var(--cream-text);">
+                            Or email
+                            <a href="mailto:admin@truenorthritual.com" class="underline">admin@truenorthritual.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing line -->
+        <section class="container mx-auto px-6 py-16 text-center">
+            <div class="ornament max-w-xs mx-auto mb-8" aria-hidden="true">
+                <span class="line"></span><span class="diamond"></span><span class="line r"></span>
+            </div>
+            <p class="lead text-2xl" style="color: var(--gold-deep);">We&rsquo;d love to see you there.</p>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-white py-12 border-t">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h2 class="font-baskervville text-xl mb-4">Opening Hours</h2>
+                    <p class="text-gray-700">Monday to Friday 9.30am till 2.30pm<br>Late nights Wednesday 6pm till late</p>
+                </div>
+
+                <div>
+                    <h2 class="font-baskervville text-xl mb-4">Contact</h2>
+                    <p class="text-gray-700 mb-2">L2/418 Princes Street<br>Central Dunedin, Dunedin, 9016</p>
+                    <p class="text-gray-700 mb-2">
+                        <a href="tel:02040802259" class="hover:text-gray-900">020 4080 2259</a>
+                    </p>
+                    <p class="text-gray-700">
+                        <a href="mailto:admin@truenorthritual.com" class="hover:text-gray-900 underline">admin@truenorthritual.com</a>
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="font-baskervville text-xl mb-4">Follow Us</h2>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/truenorthritual" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram" aria-hidden="true">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/truenorthritual" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t text-center text-gray-600">
+                <p>&copy; 2026 True North Ritual. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared site JS (mobile menu, header shadow-on-scroll) -->
+    <script src="js/main.js"></script>
+</body>
+</html>

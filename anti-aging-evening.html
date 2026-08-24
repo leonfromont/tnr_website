@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An evening at True North Ritual on anti-ageing: industry secrets, lifestyle hacks and making your own mask. Friday 4 September, 6pm. Limited to eight guests. Reserve your spot.">
+    <meta name="description" content="An evening at True North Ritual on anti-ageing: industry secrets, lifestyle hacks and making your own mask. Friday 4 September, 6pm. This evening is booked out — see our other events.">
     <link rel="canonical" href="https://truenorthritual.com/anti-aging-evening.html">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://truenorthritual.com/anti-aging-evening.html">
     <meta property="og:title" content="Make Your Own Mask, Anti-Ageing Master Class | True North Ritual">
-    <meta property="og:description" content="Industry secrets, lifestyle hacks and making your own mask — an intimate evening at our Dunedin studio. Everyone welcome, limited to eight guests.">
+    <meta property="og:description" content="Industry secrets, lifestyle hacks and making your own mask — an intimate evening at our Dunedin studio. Booked out; more dates coming.">
     <meta property="og:image" content="https://truenorthritual.com/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -19,7 +19,7 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://truenorthritual.com/anti-aging-evening.html">
     <meta property="twitter:title" content="Make Your Own Mask, Anti-Ageing Master Class | True North Ritual">
-    <meta property="twitter:description" content="Industry secrets, lifestyle hacks and making your own mask — an intimate evening at our Dunedin studio. Everyone welcome, limited to eight guests.">
+    <meta property="twitter:description" content="Industry secrets, lifestyle hacks and making your own mask — an intimate evening at our Dunedin studio. Booked out; more dates coming.">
     <meta property="twitter:image" content="https://truenorthritual.com/images/og-image.jpg">
 
     <title>Make Your Own Mask, Anti-Ageing Master Class | True North Ritual</title>
@@ -240,22 +240,20 @@
             white-space: nowrap;
         }
 
-        /* ---------- Placeholder checkout button (light-on-deep-gold within reserve band) ---------- */
-        #stripe-checkout {
+        /* ---------- Cream button, for use on the deep-gold reserve band ---------- */
+        .btn-cream {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.7rem;
-            width: 100%;
-            max-width: 24rem;
             background: var(--cream-text);
             color: var(--ink);
             font-family: 'Libre Franklin', sans-serif;
             font-weight: 600;
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            font-size: 0.82rem;
-            padding: 1.15rem 2.5rem;
+            font-size: 0.8rem;
+            padding: 1.05rem 2.25rem;
             border-radius: 0.375rem;
             border: 1px solid var(--cream-text);
             text-decoration: none;
@@ -263,20 +261,13 @@
             box-shadow: 0 18px 40px -16px rgba(0,0,0,0.45);
             transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
         }
-        #stripe-checkout:hover {
+        .btn-cream:hover {
             transform: translateY(-3px);
             background: #fff;
             box-shadow: 0 26px 50px -18px rgba(0,0,0,0.5);
         }
-        /* Disabled placeholder state: still clearly readable, but visually inert */
-        #stripe-checkout:disabled {
-            cursor: default;
-            opacity: 0.92;
-        }
-        #stripe-checkout:disabled:hover {
-            transform: none;
-            background: var(--cream-text);
-            box-shadow: 0 18px 40px -16px rgba(0,0,0,0.45);
+        @media (prefers-reduced-motion: reduce) {
+            .btn-cream:hover { transform: none; }
         }
 
         /* Price block: sized with clamp + wrapping so the amount scales/wraps and
@@ -375,7 +366,7 @@
                     <a href="treatments.html" class="nav-link">Skin Therapies</a>
                     <a href="microneedling.html" class="nav-link">Microneedling</a>
                     <a href="eye-enhancements.html" class="nav-link">Eye Enhancements</a>
-                    <a href="anti-aging-evening.html" class="nav-link active">Events</a>
+                    <a href="events.html" class="nav-link active">Events</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                     <a href="https://app.truenorthritual.com" class="nav-link">Login</a>
                     <a href="book.html" class="nav-link nav-link-cta">Book Now</a>
@@ -398,7 +389,7 @@
                 <a href="treatments.html" class="block py-2 nav-link">Skin Therapies</a>
                 <a href="microneedling.html" class="block py-2 nav-link">Microneedling</a>
                 <a href="eye-enhancements.html" class="block py-2 nav-link">Eye Enhancements</a>
-                <a href="anti-aging-evening.html" class="block py-2 nav-link active">Events</a>
+                <a href="events.html" class="block py-2 nav-link active">Events</a>
                 <a href="contact.html" class="block py-2 nav-link">Contact</a>
                 <a href="https://app.truenorthritual.com" class="block py-2 nav-link">Login</a>
                 <a href="book.html" class="block py-2 nav-link nav-link-cta">Book Now</a>
@@ -452,15 +443,15 @@
                     </p>
                 </div>
 
-                <!-- Badges: open to all + capacity -->
+                <!-- Badges: all eight places have gone -->
                 <div class="reveal d-5 flex flex-wrap items-center justify-center gap-3 mb-9">
-                    <span class="pill"><span class="dot" aria-hidden="true"></span>Everyone Welcome</span>
+                    <span class="pill"><span class="dot" aria-hidden="true"></span>Booked Out</span>
                     <span class="pill"><span class="dot" aria-hidden="true"></span>Limited to Eight Guests</span>
                 </div>
 
-                <!-- Primary CTA anchor — native brand btn-primary -->
+                <!-- This evening is full, so the CTA points at the other dates -->
                 <div class="reveal d-6">
-                    <a href="#reserve" class="btn-primary">Reserve Your Spot</a>
+                    <a href="events.html" class="btn-primary">See Other Events</a>
                 </div>
             </div>
         </section>
@@ -574,7 +565,7 @@
                         </div>
                         <div class="detail-row">
                             <dt class="detail-label">Guests</dt>
-                            <dd class="text-right" style="color: var(--ink-soft);">Everyone welcome &mdash; limited to eight places</dd>
+                            <dd class="text-right" style="color: var(--ink-soft);">Eight places &mdash; all now taken</dd>
                         </div>
                     </dl>
                 </div>
@@ -589,11 +580,11 @@
                     <!-- Left: reservation statement -->
                     <div class="md:col-span-7">
                         <p class="label label-cream reveal d-0 mb-5">Your Ticket &middot; Eight Places</p>
-                        <h2 id="reserve-title" class="display text-4xl md:text-6xl reveal d-1 mb-7">Reserve<br>your spot</h2>
+                        <h2 id="reserve-title" class="display text-4xl md:text-6xl reveal d-1 mb-7">Booked<br>out</h2>
                         <p class="reveal d-2 max-w-md text-lg leading-relaxed" style="color: var(--cream-text);">
-                            One ticket secures your place for the evening: the full session,
-                            your custom mask, nibbles, drinks and goodie bag, all included.
-                            With just eight spots, we expect them to go quickly.
+                            All eight places for this evening have gone. Thank you to everyone
+                            who booked &mdash; we can&rsquo;t wait to host you. More dates are
+                            on the way, so do let us know if you&rsquo;d like to be told first.
                         </p>
                     </div>
 
@@ -606,16 +597,25 @@
                         </p>
                         <p class="text-sm mb-8" style="color: var(--cream-text);">NZD &middot; per person</p>
 
-                        <!-- Stripe Buy Button (live checkout) — client-only, suits this static site.
-                             The publishable key (pk_live_…) is meant to be public; no secret key is exposed.
-                             Edit price/label/branding in the Stripe Dashboard for this Buy Button. -->
-                        <stripe-buy-button
-                            buy-button-id="buy_btn_1TzXYxQ2TpeKdaGXdtj3ezGv"
-                            publishable-key="pk_live_51TUZcDQ2TpeKdaGXqVhVwT6ey6N9on1HNSM103UaUT1RpgZMFSZGPLpklRi3Yse1ANeWNuscALA83eY2irp39Ayx007qt6l0Qp">
-                        </stripe-buy-button>
+                        <!-- SOLD OUT: the live Stripe Buy Button is withdrawn because all eight
+                             places have gone (the Stripe payment link is itself capped at eight
+                             payments, so it deactivates on its own). To sell this evening again,
+                             restore the embed below and put back the buy-button.js script tag at
+                             the foot of the page:
+
+                             <stripe-buy-button
+                                 buy-button-id="buy_btn_1TzXYxQ2TpeKdaGXdtj3ezGv"
+                                 publishable-key="pk_live_51TUZcDQ2TpeKdaGXqVhVwT6ey6N9on1HNSM103UaUT1RpgZMFSZGPLpklRi3Yse1ANeWNuscALA83eY2irp39Ayx007qt6l0Qp">
+                             </stripe-buy-button>
+                        -->
+                        <p class="font-baskervville text-2xl md:text-3xl mb-4" style="color: var(--cream-text);">
+                            This evening is fully booked.
+                        </p>
+                        <a href="events.html" class="btn-cream">See Other Events</a>
 
                         <p class="mt-7 text-sm" style="color: var(--cream-text);">
-                            Eight places keep the evening personal, with time for everyone&rsquo;s questions.
+                            To hear about the next one first, email
+                            <a href="mailto:admin@truenorthritual.com" class="underline">admin@truenorthritual.com</a>.
                         </p>
                     </div>
                 </div>
@@ -680,8 +680,8 @@
         </div>
     </footer>
 
-    <!-- Stripe Buy Button (client-only checkout) -->
-    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+    <!-- Stripe buy-button.js — restore alongside the embed when this evening sells again:
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script> -->
 
     <!-- Shared site JS (smooth-scroll for #reserve anchor, header shadow-on-scroll) -->
     <script src="js/main.js"></script>
