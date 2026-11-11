@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://truenorthritual.com/">
     <meta property="og:title" content="True North Ritual - Premium Beauty & Skin Treatments">
     <meta property="og:description" content="Expert beauty and skin treatments in Dunedin, New Zealand. Discover your skin's true potential.">
-    <meta property="og:image" content="https://truenorthritual.com/images/og-image.jpg">
+    <meta property="og:image" content="https://truenorthritual.com/images/og-home.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -21,7 +21,7 @@
     <meta property="twitter:url" content="https://truenorthritual.com/">
     <meta property="twitter:title" content="True North Ritual - Premium Beauty & Skin Treatments">
     <meta property="twitter:description" content="Expert beauty and skin treatments in Dunedin, New Zealand. Discover your skin's true potential.">
-    <meta property="twitter:image" content="https://truenorthritual.com/images/og-image.jpg">
+    <meta property="twitter:image" content="https://truenorthritual.com/images/og-home.jpg">
 
     <title>True North Ritual - Advanced Skin Solutions</title>
 
@@ -55,7 +55,7 @@
       "@context": "https://schema.org",
       "@type": "BeautySalon",
       "name": "True North Ritual",
-      "image": "https://truenorthritual.com/images/og-image.jpg",
+      "image": "https://truenorthritual.com/images/og-home.jpg",
       "url": "https://truenorthritual.com",
       "telephone": "+6402040802259",
       "email": "admin@truenorthritual.com",
@@ -131,12 +131,18 @@
     <!-- About Snippet -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="font-baskervville text-4xl md:text-5xl mb-6">Welcome to True North Ritual</h2>
-                <p class="text-lg text-gray-700 mb-6">
-                    Experience personalized care in our tranquil studio, where every treatment is tailored to your unique skin needs.
-                </p>
-                <a href="about.html" class="btn-secondary">Learn More About Us</a>
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center max-w-5xl mx-auto">
+                <picture>
+                    <source type="image/webp" srcset="images/studio-consultation-800.webp 800w, images/studio-consultation-1400.webp 1400w" sizes="(min-width: 768px) 480px, 100vw">
+                    <img src="images/studio-consultation.jpg" alt="The consultation corner at True North Ritual: two cream armchairs, small wooden tables and a brass floor lamp in front of sheer curtains" width="1200" height="1125" loading="lazy" class="w-full h-auto rounded-lg shadow-lg">
+                </picture>
+                <div class="text-center md:text-left">
+                    <h2 class="font-baskervville text-4xl md:text-5xl mb-6">Welcome to True North Ritual</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Experience personalized care in our tranquil studio, where every treatment is tailored to your unique skin needs.
+                    </p>
+                    <a href="about.html" class="btn-secondary">Learn More About Us</a>
+                </div>
             </div>
         </div>
     </section>
