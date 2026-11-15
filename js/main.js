@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 gtag('event', 'phone_click', {link_location: location, link_text: text});
             } else if (href.startsWith('mailto:')) {
                 gtag('event', 'email_click', {link_location: location, link_text: text});
-            } else if (/(^|\/)book\.html(?:$|[?#])/.test(href)) {
-                if (window.location.pathname.endsWith('/book.html')) return;
+            } else if (/^https:\/\/bookings\.gettimely\.com\//.test(href)) {
+                // Every Book button, including the menu, goes straight to Timely.
                 gtag('event', 'book_click', {link_location: location, link_text: text});
             }
         });
